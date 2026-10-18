@@ -1,0 +1,1 @@
+- Must handle lo > hi by throwing RangeError.

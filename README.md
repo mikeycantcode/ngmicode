@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SteerCode
 
-## Getting Started
+**Free practice for AI-assisted coding interviews.** NeetCode, rebuilt for the rounds where you
+steer a coding agent through a real codebase, under a clock, and then defend your work.
 
-First, run the development server:
+Built for everyone from students facing their first loop to staff engineers re-training for the
+new format.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## The four formats
+
+| Format | What it simulates | Agent |
+|---|---|---|
+| **Codebase Sprint** | Large unfamiliar repo, ship a feature in 30–60 min | Frontier model (`deepseek/deepseek-v4.1-flash`) |
+| **Weak Agent** | Moderate repo, a small/older model with a short memory | `openai/gpt-5.6-luna`, last ~16 messages, 8 steps/turn |
+| **Precision Spec** | Small task, the agent does *exactly* what you write and asks when you leave gaps | Frontier model in literal mode |
+| **Debug & Review** | Read, debug and optimize existing code with an AI pair | Frontier model |
+
+100 problems across 8 production-shaped TypeScript codebases (ledger, job queue, e-commerce,
+markdown toolkit, KV store, team chat, ride dispatch, build orchestrator), 13 topics on a
+NeetCode-style roadmap tree, easy → hard.
+
+## How grading works
+
+- **Few hidden tests by design** (1–4 per problem). They check the key behavior and the trap.
+- An **AI grader** (`deepseek/deepseek-v4-pro`) reads your whole session: prompts, every agent tool
+  call, test runs, notes, and the final diff. It scores 5 dimensions (decomposition, agent steering,
+  verification, code quality, communication) weighted per format.
+- An **AI interviewer** then asks 3–4 follow-up questions about your submission. Your answers
+  adjust the score by up to ±10.
+- Score = 35% hidden tests + 65% rubric. 70+ counts as solved.
+
+## Architecture
+
+```
+Browser                                   Next.js server                      OpenRouter
+┌───────────────────────────────┐        ┌─────────────────────────┐        ┌──────────┐
+│ Monaco editor, file tree       │        │ /api/agent  (SSE proxy, │──────▶│ agent    │
+│ Agent loop + tool execution ───┼──────▶│   per-format prompts,   │        │ models   │
+│   (read/search/edit/run_tests) │        │   context trimming,     │        └──────────┘
+│ Test runner in a Web Worker    │        │   daily token budget)   │        ┌──────────┐
+│   (sucrase + tiny CJS loader)  │        │ /api/attempts/* submit, │──────▶│ grader / │
+└───────────────────────────────┘        │   follow-up, finalize   │        │ interview│
+                                          │ Postgres (users,        │        └──────────┘
+                                          │   attempts, usage)      │
+                                          └─────────────────────────┘
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Agent tools run **in the browser** against the in-memory workspace; the server only proxies the
+  model call, so no user code ever executes on the server.
+- Code runs in a sandboxed **Web Worker** (fresh worker per run, killed after 20 s).
+- Auth is self-contained: email + password (bcrypt), JWT session cookie. No third-party auth.
+- Tables are created automatically on first request.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Run locally
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+cp .env.example .env.local   # fill in DATABASE_URL, AUTH_SECRET, OPENROUTER_API_KEY
+npm run dev
+```
 
-## Learn More
+| Variable | Purpose |
+|---|---|
+| `DATABASE_URL` | Postgres connection string |
+| `AUTH_SECRET` | 32+ random chars for session signing |
+| `OPENROUTER_API_KEY` | Model access |
+| `AGENT_MODEL_STRONG` / `AGENT_MODEL_WEAK` / `GRADER_MODEL` | Optional model overrides |
+| `DAILY_TOKEN_LIMIT` | Per-user daily token budget (default 3,000,000) |
 
-To learn more about Next.js, take a look at the following resources:
+## Authoring problems
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+See [`content/AUTHORING.md`](content/AUTHORING.md). Each problem is a folder with a brief, a private
+rubric, an optional overlay on a base codebase, hidden tests and a reference solution.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run content:verify                 # solution passes all tests; starter fails a hidden test
+npm run content:verify -- base:ledger  # one codebase
+npm run content:test-base -- ledger    # a base's visible tests
+```
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Note: this repo is public, so hidden tests and reference solutions are readable here. It is a
+practice tool — peeking only costs you the practice.
