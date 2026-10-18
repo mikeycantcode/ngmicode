@@ -1,0 +1,11 @@
+{
+  "slug": "taskq-attempts-semantics",
+  "title": "Charged four times on attempts: 3",
+  "base": "taskq",
+  "track": "review",
+  "category": "comprehension",
+  "difficulty": "easy",
+  "timeLimit": 20,
+  "summary": "Code, comments and tests disagree with the docs about what `attempts` means. Work out the intended contract and make the runtime honour it.",
+  "tags": ["retries", "contracts", "docs-vs-code"]
+}

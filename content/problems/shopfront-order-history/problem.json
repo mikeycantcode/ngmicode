@@ -1,0 +1,11 @@
+{
+  "slug": "shopfront-order-history",
+  "title": "Order history endpoint",
+  "base": "shopfront",
+  "track": "sprint",
+  "category": "data-api",
+  "difficulty": "easy",
+  "timeLimit": 30,
+  "summary": "Add a paginated, filterable 'my orders' endpoint that follows the API's existing conventions exactly.",
+  "tags": ["rest", "pagination", "api-conventions"]
+}

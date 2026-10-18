@@ -1,0 +1,11 @@
+{
+  "slug": "taskq-backoff-jitter",
+  "title": "Retry backoff with seeded jitter",
+  "base": "taskq",
+  "track": "precision",
+  "category": "fundamentals",
+  "difficulty": "easy",
+  "timeLimit": 20,
+  "summary": "Implement computeBackoff exactly to spec: fixed vs exponential, cap-then-jitter, rounding, error messages, and exact RNG consumption.",
+  "tags": ["retries", "determinism", "spec"]
+}

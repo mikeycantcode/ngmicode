@@ -1,0 +1,11 @@
+{
+  "slug": "chatroom-unread-counts",
+  "title": "Unread & mention badges",
+  "base": "chatroom",
+  "track": "sprint",
+  "category": "integration",
+  "difficulty": "hard",
+  "timeLimit": 60,
+  "summary": "Read markers, unread and mention counts, and live badge updates, wired through messages, memberships, mentions, and real-time delivery.",
+  "tags": ["read-state", "events", "realtime", "multi-module"]
+}

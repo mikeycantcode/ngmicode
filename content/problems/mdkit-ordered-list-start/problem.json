@@ -1,0 +1,11 @@
+{
+  "slug": "mdkit-ordered-list-start",
+  "title": "Honor ordered-list start numbers",
+  "base": "mdkit",
+  "track": "precision",
+  "category": "delegation",
+  "difficulty": "easy",
+  "timeLimit": 20,
+  "summary": "The parser records `start` but both renderers ignore it. Delegate a two-file change so the literal agent gets every boundary right.",
+  "tags": ["lists", "renderers", "delegation"]
+}

@@ -1,0 +1,11 @@
+{
+  "slug": "shopfront-bulk-tiers",
+  "title": "Volume tiers v2",
+  "base": "shopfront",
+  "track": "precision",
+  "category": "delegation",
+  "difficulty": "hard",
+  "timeLimit": 45,
+  "summary": "Rewrite the volume-tier pricing rule to a new spec: per-product quantity, exclusions, floor rounding and exact validation errors.",
+  "tags": ["pricing", "rounding", "validation"]
+}

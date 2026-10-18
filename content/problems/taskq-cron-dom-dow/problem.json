@@ -1,0 +1,11 @@
+{
+  "slug": "taskq-cron-dom-dow",
+  "title": "Vixie-compatible cron day matching",
+  "base": "taskq",
+  "track": "precision",
+  "category": "specs",
+  "difficulty": "medium",
+  "timeLimit": 30,
+  "summary": "Make the cron parser match classic cron: OR the day fields when both are restricted, accept 7 as Sunday and JAN/MON-style names.",
+  "tags": ["cron", "parsing", "spec", "dates"]
+}

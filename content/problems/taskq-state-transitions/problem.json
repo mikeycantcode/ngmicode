@@ -1,0 +1,11 @@
+{
+  "slug": "taskq-state-transitions",
+  "title": "One choke point for job state changes",
+  "base": "taskq",
+  "track": "sprint",
+  "category": "refactoring",
+  "difficulty": "medium",
+  "timeLimit": 45,
+  "summary": "State changes are scattered across eight call sites and some bypass the state machine. Route every one through a single validated path that emits state:changed exactly once.",
+  "tags": ["refactoring", "state-machine", "events", "invariants"]
+}

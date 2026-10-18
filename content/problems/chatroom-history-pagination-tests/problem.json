@@ -1,0 +1,11 @@
+{
+  "slug": "chatroom-history-pagination-tests",
+  "title": "Missing messages when scrolling back",
+  "base": "chatroom",
+  "track": "weak",
+  "category": "testing",
+  "difficulty": "medium",
+  "timeLimit": 30,
+  "summary": "Build a real test harness for history pagination, with seeding and page-walking helpers, and use it to find why bursts of messages vanish.",
+  "tags": ["test-helpers", "pagination", "property-style", "bug-hunt"]
+}

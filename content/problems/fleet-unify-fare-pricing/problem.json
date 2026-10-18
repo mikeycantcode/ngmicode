@@ -1,0 +1,11 @@
+{
+  "slug": "fleet-unify-fare-pricing",
+  "title": "Retire legacy fare math",
+  "base": "fleet",
+  "track": "sprint",
+  "category": "refactoring",
+  "difficulty": "easy",
+  "timeLimit": 30,
+  "summary": "Upfront prices come from a deprecated float-dollar formula and disagree with the final charge. Consolidate on one pricing path without changing final fares.",
+  "tags": ["refactoring", "pricing", "duplication", "money"]
+}

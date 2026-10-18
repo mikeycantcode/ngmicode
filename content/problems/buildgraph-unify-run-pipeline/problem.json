@@ -1,0 +1,11 @@
+{
+  "slug": "buildgraph-unify-run-pipeline",
+  "title": "One pipeline for build, test and run",
+  "base": "buildgraph",
+  "track": "sprint",
+  "category": "refactoring",
+  "difficulty": "medium",
+  "timeLimit": 45,
+  "summary": "Collapse copy-pasted CLI commands into one code path, add a generic `run`, and catch the drift the copies already accumulated.",
+  "tags": ["refactoring", "cli", "duplication"]
+}

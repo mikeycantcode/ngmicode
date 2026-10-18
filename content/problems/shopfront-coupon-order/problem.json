@@ -1,0 +1,11 @@
+{
+  "slug": "shopfront-coupon-order",
+  "title": "The over-generous coupon",
+  "base": "shopfront",
+  "track": "review",
+  "category": "comprehension",
+  "difficulty": "easy",
+  "timeLimit": 30,
+  "summary": "A support ticket shows a customer paid less than the pricing contract says. Explain why and make the engine match its documented behavior.",
+  "tags": ["pricing", "discount-stacking", "code-reading"]
+}

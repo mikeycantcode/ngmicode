@@ -1,0 +1,25 @@
+// Public API of buildgraph. Anything not exported here is internal.
+export * from "./core/errors";
+export { EventBus, type BuildEvents } from "./core/events";
+export { MemoryLogger, nullLogger, type Logger } from "./core/logger";
+export * as semver from "./semver/range";
+export { parse as parseVersion, valid as validVersion } from "./semver/parse";
+export { compare as compareVersions, sortVersions } from "./semver/compare";
+export { MemoryFS, TrackedFS, type VirtualFS } from "./vfs/vfs";
+export { loadWorkspace, type Workspace, type WorkspacePackage } from "./workspace/workspace";
+export { parseManifest, type Manifest } from "./workspace/manifest";
+export { buildPackageGraph } from "./workspace/package-graph";
+export { Graph } from "./graph/dag";
+export { buildTaskGraph, taskId, parseTaskId, type TaskNode } from "./graph/task-graph";
+export { loadConfig, resolveConfig } from "./config/config";
+export type { BuildGraphConfig, TaskDefinition } from "./config/types";
+export { MemoryCacheStore, FsCacheStore, type CacheStore, type CacheEntry } from "./cache/cache-store";
+export { computeTaskHash } from "./cache/cache-key";
+export { ManualClock, systemClock, type Clock } from "./scheduler/clock";
+export { runSchedule } from "./scheduler/scheduler";
+export { ScriptExecutor, executorFrom, type Executor } from "./runner/executors";
+export { runTasks, type RunSummary } from "./runner/task-runner";
+export { findAffected } from "./affected/affected";
+export { InMemoryRegistry } from "./resolver/registry";
+export { resolveDependencies } from "./resolver/resolver";
+export { createCli } from "./cli/commands";

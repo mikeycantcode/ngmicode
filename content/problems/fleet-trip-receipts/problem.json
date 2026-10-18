@@ -1,0 +1,11 @@
+{
+  "slug": "fleet-trip-receipts",
+  "title": "Trip receipts endpoint",
+  "base": "fleet",
+  "track": "sprint",
+  "category": "data-api",
+  "difficulty": "easy",
+  "timeLimit": 30,
+  "summary": "Design and ship GET /trips/:id/receipt — an itemized, balanced, access-controlled view over existing fare data.",
+  "tags": ["api", "money", "authz", "data-modeling"]
+}

@@ -1,0 +1,11 @@
+{
+  "slug": "fleet-surge-curve",
+  "title": "Smoothed surge curve",
+  "base": "fleet",
+  "track": "precision",
+  "category": "specs",
+  "difficulty": "medium",
+  "timeLimit": 30,
+  "summary": "Replace the surge step function with a smoothed, exactly-specified curve: dead band, step limit, cap, and exact rational arithmetic.",
+  "tags": ["pricing", "surge", "basis-points", "floating-point", "spec"]
+}

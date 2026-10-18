@@ -1,0 +1,11 @@
+{
+  "slug": "mdkit-toc-marker",
+  "title": "Inline [[toc]] marker",
+  "base": "mdkit",
+  "track": "sprint",
+  "category": "integration",
+  "difficulty": "hard",
+  "timeLimit": 60,
+  "summary": "Wire a [[toc]] placeholder through front matter, the processor, the TOC builder, both renderers and the CLI, with a clear precedence order.",
+  "tags": ["toc", "front-matter", "cli", "multi-module"]
+}

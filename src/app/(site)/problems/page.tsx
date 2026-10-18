@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { listProblems } from "@/lib/problems";
+import { listProblems, withoutSource } from "@/lib/problems";
 import { getUser } from "@/lib/auth";
 import { getProgress } from "@/lib/progress";
 import { ProblemTable } from "./problem-table";
@@ -14,10 +14,10 @@ async function Table({ searchParams }: { searchParams: PageProps<"/problems">["s
   const one = (v: string | string[] | undefined) => (typeof v === "string" ? v : undefined);
   return (
     <ProblemTable
-      problems={listProblems()}
+      problems={listProblems().map(withoutSource)}
       progress={progress}
       signedIn={!!user}
-      initial={{ track: one(sp.track), category: one(sp.category), difficulty: one(sp.difficulty) }}
+      initial={{ track: one(sp.track), category: one(sp.category), difficulty: one(sp.difficulty), origin: one(sp.origin) }}
     />
   );
 }

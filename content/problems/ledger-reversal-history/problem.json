@@ -1,0 +1,11 @@
+{
+  "slug": "ledger-reversal-history",
+  "title": "Why did last month's books change?",
+  "base": "ledger",
+  "track": "review",
+  "category": "comprehension",
+  "difficulty": "easy",
+  "timeLimit": 30,
+  "summary": "A closed month's trial balance moved after someone reversed a duplicate today. Work out the ledger's time model and restore its core invariant.",
+  "tags": ["accounting", "invariants", "time"]
+}

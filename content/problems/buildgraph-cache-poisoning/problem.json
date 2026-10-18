@@ -1,0 +1,11 @@
+{
+  "slug": "buildgraph-cache-poisoning",
+  "title": "Cache restore path traversal",
+  "base": "buildgraph",
+  "track": "weak",
+  "category": "security",
+  "difficulty": "medium",
+  "timeLimit": 30,
+  "summary": "A crafted cache entry can write files outside the package. Close the hole so a poisoned entry degrades to a cache miss.",
+  "tags": ["security", "path-traversal", "caching"]
+}

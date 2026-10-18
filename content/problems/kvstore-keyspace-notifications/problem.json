@@ -1,0 +1,11 @@
+{
+  "slug": "kvstore-keyspace-notifications",
+  "title": "Keyspace notifications",
+  "base": "kvstore",
+  "track": "sprint",
+  "category": "integration",
+  "difficulty": "hard",
+  "timeLimit": 60,
+  "summary": "Wire keyspace events into pub/sub across commands, expiry, eviction, transactions, replay and config, publishing only for keys that actually changed.",
+  "tags": ["pubsub", "events", "transactions", "persistence", "config"]
+}

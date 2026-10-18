@@ -1,0 +1,11 @@
+{
+  "slug": "shopfront-reservation-leak",
+  "title": "Phantom out-of-stock",
+  "base": "shopfront",
+  "track": "review",
+  "category": "debugging",
+  "difficulty": "medium",
+  "timeLimit": 30,
+  "summary": "Products show as sold out after failed checkouts. Find every path that leaks reserved stock and fix it.",
+  "tags": ["inventory", "transactions", "error-paths"]
+}

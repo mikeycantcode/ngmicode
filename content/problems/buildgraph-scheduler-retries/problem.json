@@ -1,0 +1,11 @@
+{
+  "slug": "buildgraph-scheduler-retries",
+  "title": "Retries and --continue",
+  "base": "buildgraph",
+  "track": "sprint",
+  "category": "async",
+  "difficulty": "hard",
+  "timeLimit": 60,
+  "summary": "Add retries with exponential backoff and continue-on-error to the concurrency-limited scheduler without starving, over-subscribing or resolving early.",
+  "tags": ["async", "scheduling", "concurrency", "retries"]
+}

@@ -1,0 +1,11 @@
+{
+  "slug": "kvstore-copy-command",
+  "title": "Add COPY",
+  "base": "kvstore",
+  "track": "sprint",
+  "category": "features",
+  "difficulty": "medium",
+  "timeLimit": 45,
+  "summary": "Ship Redis's COPY command end to end: deep copies, TTLs, REPLACE, durability through the WAL, memory budget and WATCH.",
+  "tags": ["commands", "persistence", "aliasing", "ttl"]
+}

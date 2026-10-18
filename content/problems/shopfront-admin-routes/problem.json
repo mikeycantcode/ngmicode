@@ -1,0 +1,11 @@
+{
+  "slug": "shopfront-admin-routes",
+  "title": "Pen-test findings",
+  "base": "shopfront",
+  "track": "weak",
+  "category": "security",
+  "difficulty": "easy",
+  "timeLimit": 30,
+  "summary": "A pen test found privilege escalation and an order IDOR. Fix both classes of bug everywhere, not just where they were reported.",
+  "tags": ["authz", "idor", "mass-assignment"]
+}

@@ -1,0 +1,11 @@
+{
+  "slug": "mdkit-frontmatter-tests",
+  "title": "Front matter test coverage",
+  "base": "mdkit",
+  "track": "weak",
+  "category": "testing",
+  "difficulty": "easy",
+  "timeLimit": 20,
+  "summary": "The YAML-lite front matter parser has only smoke tests. Drive a small agent to cover the documented behavior and fix what the tests expose.",
+  "tags": ["testing", "parsing", "yaml"]
+}

@@ -1,0 +1,11 @@
+{
+  "slug": "ledger-parse-amount",
+  "title": "Parse decimal amounts into minor units",
+  "base": "ledger",
+  "track": "precision",
+  "category": "fundamentals",
+  "difficulty": "easy",
+  "timeLimit": 15,
+  "summary": "Replace a float-based money parser with an exact string parser whose every edge case you must spell out to a literal agent.",
+  "tags": ["money", "parsing", "validation"]
+}

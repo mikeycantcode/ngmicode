@@ -1,0 +1,11 @@
+{
+  "slug": "ledger-cross-currency-payments",
+  "title": "Cross-currency payments",
+  "base": "ledger",
+  "track": "sprint",
+  "category": "integration",
+  "difficulty": "hard",
+  "timeLimit": 60,
+  "summary": "EUR customers paying USD merchants: wire FX into the payment lifecycle so every entry balances per currency and refunds don't leak money.",
+  "tags": ["fx", "payments", "double-entry", "rounding"]
+}

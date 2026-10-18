@@ -1,0 +1,11 @@
+{
+  "slug": "fleet-rider-tips",
+  "title": "Rider tipping",
+  "base": "fleet",
+  "track": "sprint",
+  "category": "integration",
+  "difficulty": "hard",
+  "timeLimit": 60,
+  "summary": "Ship tipping end to end — API, trip model, events, and the driver earnings ledger — with windows, idempotency and payout-period correctness.",
+  "tags": ["feature", "payouts", "api", "events", "multi-module"]
+}

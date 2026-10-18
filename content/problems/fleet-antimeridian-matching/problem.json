@@ -1,0 +1,11 @@
+{
+  "slug": "fleet-antimeridian-matching",
+  "title": "No drivers on Taveuni",
+  "base": "fleet",
+  "track": "review",
+  "category": "debugging",
+  "difficulty": "medium",
+  "timeLimit": 30,
+  "summary": "Riders just east of the 180° meridian get 'no drivers' after a perf release. Find every cause, not just the first one.",
+  "tags": ["geo", "antimeridian", "spatial-index", "regression"]
+}

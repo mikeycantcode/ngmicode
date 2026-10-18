@@ -1,0 +1,11 @@
+{
+  "slug": "fleet-api-authz-hardening",
+  "title": "Pen-test findings: driver API",
+  "base": "fleet",
+  "track": "weak",
+  "category": "security",
+  "difficulty": "medium",
+  "timeLimit": 30,
+  "summary": "Fix an IDOR and a coordinate-coercion bug from a pen-test report — on every route that shares the flaw, without breaking ops tooling.",
+  "tags": ["security", "authz", "idor", "validation", "api"]
+}

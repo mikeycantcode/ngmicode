@@ -1,0 +1,11 @@
+{
+  "slug": "fleet-concurrent-dispatch",
+  "title": "One driver, two riders",
+  "base": "fleet",
+  "track": "weak",
+  "category": "async",
+  "difficulty": "hard",
+  "timeLimit": 45,
+  "summary": "Concurrent dispatches double-assign drivers while offers are in flight. Make dispatch safe across awaits — including declines and mid-offer cancellations.",
+  "tags": ["async", "race-condition", "reservation", "dispatch"]
+}

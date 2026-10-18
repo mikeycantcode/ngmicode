@@ -1,0 +1,11 @@
+{
+  "slug": "kvstore-injectable-clock",
+  "title": "Finish the Clock migration",
+  "base": "kvstore",
+  "track": "sprint",
+  "category": "refactoring",
+  "difficulty": "easy",
+  "timeLimit": 30,
+  "summary": "Route every remaining wall-clock read through the injected Clock so the engine can be simulation-tested, without changing behavior.",
+  "tags": ["refactoring", "time", "determinism", "dependency-injection"]
+}

@@ -1,0 +1,11 @@
+{
+  "slug": "fleet-wait-time-fee",
+  "title": "Waiting-time fee",
+  "base": "fleet",
+  "track": "sprint",
+  "category": "features",
+  "difficulty": "medium",
+  "timeLimit": 45,
+  "summary": "Charge riders who keep drivers waiting at pickup — threaded correctly through fare order-of-operations, payouts and cancellations.",
+  "tags": ["pricing", "money", "payouts", "cross-cutting"]
+}

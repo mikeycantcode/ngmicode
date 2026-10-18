@@ -1,0 +1,11 @@
+{
+  "slug": "taskq-graceful-shutdown",
+  "title": "Graceful shutdown for deploys",
+  "base": "taskq",
+  "track": "sprint",
+  "category": "integration",
+  "difficulty": "hard",
+  "timeLimit": 60,
+  "summary": "Make TaskQ.close() drain in-flight work across scheduler, queues and workers, with a deadline, abort-and-requeue for stragglers, and idempotency.",
+  "tags": ["shutdown", "lifecycle", "deadlines", "cancellation", "integration"]
+}

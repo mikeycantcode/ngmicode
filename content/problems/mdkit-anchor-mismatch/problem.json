@@ -1,0 +1,11 @@
+{
+  "slug": "mdkit-anchor-mismatch",
+  "title": "TOC links jump nowhere",
+  "base": "mdkit",
+  "track": "weak",
+  "category": "comprehension",
+  "difficulty": "easy",
+  "timeLimit": 20,
+  "summary": "Trace how a heading id is produced end to end, explain it, and make TOC links agree with heading anchors.",
+  "tags": ["toc", "anchors", "tracing"]
+}

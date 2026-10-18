@@ -1,0 +1,11 @@
+{
+  "slug": "chatroom-history-around",
+  "title": "Jump-to-message history window",
+  "base": "chatroom",
+  "track": "precision",
+  "category": "delegation",
+  "difficulty": "hard",
+  "timeLimit": 45,
+  "summary": "Delegate a history window centered on a message, with exact split, redistribution, ordering and error rules.",
+  "tags": ["pagination", "spec", "edge-cases"]
+}

@@ -1,0 +1,11 @@
+{
+  "slug": "fleet-cancellation-fees",
+  "title": "Cancellation policy v3",
+  "base": "fleet",
+  "track": "precision",
+  "category": "delegation",
+  "difficulty": "medium",
+  "timeLimit": 30,
+  "summary": "Delegate a new rider cancellation-fee policy (late-driver waiver, waiting surcharge, surge, cap) to a literal agent without letting it guess.",
+  "tags": ["trips", "money", "boundaries", "policy"]
+}

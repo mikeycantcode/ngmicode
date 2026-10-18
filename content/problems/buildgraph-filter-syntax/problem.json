@@ -1,0 +1,11 @@
+{
+  "slug": "buildgraph-filter-syntax",
+  "title": "Filter selectors",
+  "base": "buildgraph",
+  "track": "sprint",
+  "category": "data-api",
+  "difficulty": "easy",
+  "timeLimit": 30,
+  "summary": "Design and ship a `--filter` selector language (globs, directories, dependency/dependent expansion, exclusions) across every command that takes it.",
+  "tags": ["cli", "api-design", "graphs"]
+}

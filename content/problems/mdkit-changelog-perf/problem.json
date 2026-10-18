@@ -1,0 +1,11 @@
+{
+  "slug": "mdkit-changelog-perf",
+  "title": "Slow changelog build",
+  "base": "mdkit",
+  "track": "weak",
+  "category": "performance",
+  "difficulty": "medium",
+  "timeLimit": 30,
+  "summary": "A long CHANGELOG takes seconds to render. Two hotspots in different layers. Fix both without changing any output.",
+  "tags": ["profiling", "complexity", "slugs"]
+}

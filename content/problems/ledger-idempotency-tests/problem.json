@@ -1,0 +1,12 @@
+{
+  "slug": "ledger-idempotency-tests",
+  "title": "Pin down the idempotency contract with tests",
+  "base": "ledger",
+  "track": "weak",
+  "category": "testing",
+  "difficulty": "medium",
+  "timeLimit": 45,
+  "summary": "The idempotency module lost its tests. Get a weak agent to write a contract suite, and fix the bugs it uncovers.",
+  "tags": ["testing", "idempotency", "payments"],
+  "remove": ["tests/idempotency.test.ts"]
+}

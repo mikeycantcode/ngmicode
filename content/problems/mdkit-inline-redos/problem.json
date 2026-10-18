@@ -1,0 +1,11 @@
+{
+  "slug": "mdkit-inline-redos",
+  "title": "Fuzzer found slow inputs",
+  "base": "mdkit",
+  "track": "review",
+  "category": "performance",
+  "difficulty": "hard",
+  "timeLimit": 45,
+  "summary": "Three pathological inputs pin the CPU: regex backtracking and a missing CommonMark optimization. Fix each without changing output.",
+  "tags": ["redos", "regex", "complexity", "commonmark"]
+}

@@ -1,0 +1,11 @@
+{
+  "slug": "taskq-priority-order",
+  "title": "Out-of-order jobs on busy queues",
+  "base": "taskq",
+  "track": "review",
+  "category": "debugging",
+  "difficulty": "medium",
+  "timeLimit": 30,
+  "summary": "Same-priority jobs run out of order, and sometimes low-priority work jumps the line, but only when the backlog is deep. Reproduce it, find the root cause, and fix it.",
+  "tags": ["debugging", "data-structures", "ordering", "repro"]
+}

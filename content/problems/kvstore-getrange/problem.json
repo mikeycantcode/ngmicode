@@ -1,0 +1,11 @@
+{
+  "slug": "kvstore-getrange",
+  "title": "GETRANGE with exact Redis semantics",
+  "base": "kvstore",
+  "track": "precision",
+  "category": "fundamentals",
+  "difficulty": "easy",
+  "timeLimit": 20,
+  "summary": "Add the GETRANGE string command to a Redis-style engine with a literal-minded agent; every index rule must be spelled out.",
+  "tags": ["strings", "commands", "boundaries"]
+}

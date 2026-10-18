@@ -1,0 +1,11 @@
+{
+  "slug": "ledger-refund-overrun",
+  "title": "Refunds exceed the captured amount",
+  "base": "ledger",
+  "track": "weak",
+  "category": "debugging",
+  "difficulty": "easy",
+  "timeLimit": 20,
+  "summary": "A merchant refunded $120 on a $100 payment through two partial refunds. Steer a forgetful agent to the real guard, not a band-aid.",
+  "tags": ["payments", "validation", "money"]
+}

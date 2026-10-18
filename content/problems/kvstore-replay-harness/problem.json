@@ -1,0 +1,11 @@
+{
+  "slug": "kvstore-replay-harness",
+  "title": "Build a replay-equivalence harness",
+  "base": "kvstore",
+  "track": "weak",
+  "category": "testing",
+  "difficulty": "medium",
+  "timeLimit": 45,
+  "summary": "Keys live longer after a restart. Build a reusable test helper that proves WAL replay reproduces state, sweep the write commands with it, and fix what it finds.",
+  "tags": ["testing", "persistence", "ttl", "test-helpers"]
+}

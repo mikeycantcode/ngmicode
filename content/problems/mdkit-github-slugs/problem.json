@@ -1,0 +1,11 @@
+{
+  "slug": "mdkit-github-slugs",
+  "title": "GitHub-compatible heading slugs",
+  "base": "mdkit",
+  "track": "precision",
+  "category": "specs",
+  "difficulty": "medium",
+  "timeLimit": 30,
+  "summary": "Replace the legacy ASCII-only slugify with GitHub's algorithm, specifying Unicode classes, dash handling and fallbacks exactly.",
+  "tags": ["unicode", "slugs", "spec"]
+}

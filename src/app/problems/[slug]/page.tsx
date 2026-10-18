@@ -37,6 +37,7 @@ export default async function ProblemPage({ params }: PageProps<"/problems/[slug
         summary: p.summary,
         starter: p.starter,
         loc: p.loc,
+        repo: p.repo,
       }}
     />
   );

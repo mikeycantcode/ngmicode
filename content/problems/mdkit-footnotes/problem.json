@@ -1,0 +1,11 @@
+{
+  "slug": "mdkit-footnotes",
+  "title": "Footnotes",
+  "base": "mdkit",
+  "track": "sprint",
+  "category": "features",
+  "difficulty": "hard",
+  "timeLimit": 60,
+  "summary": "Add GFM-style footnotes end to end: block definitions, inline references, numbering, HTML and plain-text output, behind an option.",
+  "tags": ["parser", "ast", "renderers", "feature"]
+}

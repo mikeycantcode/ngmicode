@@ -1,0 +1,11 @@
+{
+  "slug": "taskq-100k-drain",
+  "title": "Drain 100k jobs before the deploy window closes",
+  "base": "taskq",
+  "track": "review",
+  "category": "performance",
+  "difficulty": "hard",
+  "timeLimit": 60,
+  "summary": "A backfill of 100k jobs crawls to a halt. Find every hot path that went quadratic and make draining fast again without changing ordering.",
+  "tags": ["performance", "complexity", "storage", "profiling"]
+}

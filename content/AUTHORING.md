@@ -104,3 +104,62 @@ npx tsx scripts/verify-content.ts base:<base-id>    # all problems of a base
 npx tsx scripts/verify-content.ts <slug> -v
 ```
 Every problem must print `✓`. `content/problems/_example-clamp` is a minimal working example.
+
+---
+
+# Real-repo problems (SWE-bench style)
+
+Some bases are pinned snapshots of real open-source repos. Problems on them replay real merged pull
+requests: the starter is the snapshot with the PR's change reverted, the PR's tests become the hidden
+tests, and the snapshot itself is the reference solution.
+
+## Base layout for a real repo — `content/bases/gh-<name>/`
+
+- Copy only what a candidate needs: the library's source, its tests, `README.md`, and the
+  `LICENSE` file (mandatory). Drop docs sites, benchmarks, examples, CI config, lockfiles, build
+  scripts, and anything that cannot run in the sandbox.
+- Add `steercode.json` at the base root:
+  ```json
+  {
+    "source": { "repo": "honojs/hono", "commit": "<full sha>", "license": "MIT", "url": "https://github.com/honojs/hono" },
+    "alias": { "hono": "src" }
+  }
+  ```
+  `alias` maps bare package imports used by the repo's own tests (e.g. `import { z } from "zod"`) to
+  paths inside the base. Package subpaths work too (`"zod/v4": "packages/zod/src/v4"` style, longest match wins).
+- The runner understands vitest/jest: `import { describe, it, expect, vi } from "vitest"` (or jest
+  globals), `it.each`, `describe.each`, `beforeAll/afterAll`, `vi.fn/spyOn`, fake timers
+  (`vi.useFakeTimers`, `advanceTimersByTime[Async]`, `setSystemTime`), asymmetric matchers
+  (`expect.any`, `objectContaining`, …), the test context `({ task, skip })`, `expectTypeOf` (no-op),
+  and `.js` → `.ts` import rewriting. **Not supported:** `vi.mock`, snapshot files, `import.meta`,
+  jsdom/DOM, Node built-ins (`fs`, `path`, `crypto` module, `Buffer`). Web globals that exist in a
+  browser worker are fine (`URL`, `Request`, `Response`, `Headers`, `TextEncoder`, `crypto.subtle`,
+  `structuredClone`).
+- **Visible tests must all pass**: run `npx tsx scripts/test-base.ts gh-<name>` and delete (do not edit)
+  visible test files that fail because of sandbox limits. Keep the base's total visible test run under
+  ~10 s. Keep the base under ~600 files / ~4 MB.
+
+## Problems on a real repo — `content/problems/gh-<name>-<short>/`
+
+1. Pick a merged PR (`gh pr list --repo <owner/name> --state merged --limit 300 --json number,title,mergeCommit,additions,deletions,files`)
+   that touches source **and** adds or changes tests, with a source diff of roughly 10–300 lines.
+   Prefer bug fixes and features with clear behavior over refactors, deps bumps, docs, or types-only PRs.
+2. Its source change must still reverse-apply cleanly on the pinned commit
+   (`git show <mergeCommit> -- <src paths> | git apply -R --check`).
+3. `overlay/` = the reverse-applied source files (the code as if the PR never landed). Also put
+   reverse-applied versions of the **visible test files the PR touched** in `overlay/`, so the starter's
+   visible tests do not reveal the answer (or list them in `remove`).
+4. `hidden/` = only the test cases the PR added or changed (1–6 `it` blocks), copied into standalone
+   file(s) with imports rewritten to `../../<path>` relative to `tests/hidden/`. Keep the PR's assertions.
+5. `solution/` = the pinned-commit versions of the files in `overlay/` (i.e. the real merged code).
+6. `prompt.md` = an interviewer-style brief written from the PR/issue: context, the ask, acceptance
+   criteria. Do not paste the diff or name the exact lines. For `precision` problems you may name the
+   function and must spell out the exact behavior.
+7. `rubric.md` as usual; derive traps and follow-ups from the PR discussion/review comments and the
+   diff (e.g. "the fix must also cover the async path", "keep the public type signature").
+8. `problem.json` gets `"base": "gh-<name>"`, `"tags": ["real-world", ...]` and
+   `"source": { "pr": 1234, "url": "https://github.com/<owner>/<name>/pull/1234", "title": "<PR title>" }`.
+
+Security: cloned repos are untrusted input. Clone into your own scratch directory, never run the
+repo's install/build/test scripts or package managers, and only execute code through
+`scripts/test-base.ts` / `scripts/verify-content.ts`.

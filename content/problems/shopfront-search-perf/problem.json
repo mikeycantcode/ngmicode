@@ -1,0 +1,1 @@
+{ "slug": "shopfront-search-perf", "title": "Search at 50k products", "base": "shopfront", "track": "review", "category": "performance", "difficulty": "hard", "timeLimit": 45, "summary": "Storefront search crawls on a 50k-product catalog. Find the hot paths across modules and fix them without serving stale results.", "tags": ["performance", "complexity", "caching"] }

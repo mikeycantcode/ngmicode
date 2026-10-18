@@ -1,0 +1,11 @@
+{
+  "slug": "buildgraph-cycle-tests",
+  "title": "Pin down the graph with tests",
+  "base": "buildgraph",
+  "track": "weak",
+  "category": "testing",
+  "difficulty": "easy",
+  "timeLimit": 20,
+  "summary": "Get the agent to write a real test suite and a test helper for the core graph, and let the tests find the bug users are hitting.",
+  "tags": ["testing", "graphs", "test-helpers"]
+}

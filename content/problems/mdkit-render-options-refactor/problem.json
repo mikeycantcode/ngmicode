@@ -1,0 +1,11 @@
+{
+  "slug": "mdkit-render-options-refactor",
+  "title": "Options object for renderHtml",
+  "base": "mdkit",
+  "track": "sprint",
+  "category": "refactoring",
+  "difficulty": "medium",
+  "timeLimit": 45,
+  "summary": "Migrate the positional renderHtml/HtmlRenderer API to an options object across the codebase without changing a byte of output or weakening safe defaults.",
+  "tags": ["api-design", "backwards-compat", "refactor"]
+}

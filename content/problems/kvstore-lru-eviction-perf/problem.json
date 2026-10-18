@@ -1,0 +1,11 @@
+{
+  "slug": "kvstore-lru-eviction-perf",
+  "title": "Eviction falls over at scale",
+  "base": "kvstore",
+  "track": "weak",
+  "category": "performance",
+  "difficulty": "hard",
+  "timeLimit": 45,
+  "summary": "Writes slow to a crawl once maxmemory is reached. Find the O(n) hot paths in eviction and memory accounting and make them O(1) without breaking LRU order or accounting.",
+  "tags": ["performance", "lru", "memory-accounting", "eviction"]
+}

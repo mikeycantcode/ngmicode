@@ -1,0 +1,11 @@
+{
+  "slug": "shopfront-order-cancel",
+  "title": "Customer order cancellation",
+  "base": "shopfront",
+  "track": "sprint",
+  "category": "features",
+  "difficulty": "medium",
+  "timeLimit": 45,
+  "summary": "Let customers cancel orders before shipment, handling stock and refunds correctly for both unpaid and paid orders.",
+  "tags": ["state-machine", "inventory", "payments"]
+}

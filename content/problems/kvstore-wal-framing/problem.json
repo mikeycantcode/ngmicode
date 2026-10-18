@@ -1,0 +1,11 @@
+{
+  "slug": "kvstore-wal-framing",
+  "title": "Checksummed WAL with torn-tail recovery",
+  "base": "kvstore",
+  "track": "sprint",
+  "category": "data-api",
+  "difficulty": "medium",
+  "timeLimit": 45,
+  "summary": "Introduce a versioned, checksummed WAL entry format that stays backward compatible, and design a replay API that recovers from a corrupt or torn tail instead of refusing to start.",
+  "tags": ["persistence", "file-format", "backward-compat", "api-design"]
+}

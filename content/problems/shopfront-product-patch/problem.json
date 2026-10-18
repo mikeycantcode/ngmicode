@@ -1,0 +1,11 @@
+{
+  "slug": "shopfront-product-patch",
+  "title": "PATCH products safely",
+  "base": "shopfront",
+  "track": "weak",
+  "category": "data-api",
+  "difficulty": "medium",
+  "timeLimit": 45,
+  "summary": "Design a partial-update endpoint for products with strict validation, optimistic concurrency and correct versioning/events.",
+  "tags": ["rest", "validation", "optimistic-locking"]
+}

@@ -1,0 +1,11 @@
+{
+  "slug": "buildgraph-prerelease-ordering",
+  "title": "Install picks the wrong beta",
+  "base": "buildgraph",
+  "track": "review",
+  "category": "debugging",
+  "difficulty": "medium",
+  "timeLimit": 30,
+  "summary": "Users report install locking old prereleases. Trace the symptoms to two separate root causes in the semver code.",
+  "tags": ["semver", "debugging", "root-cause"]
+}

@@ -1,0 +1,11 @@
+{
+  "slug": "chatroom-reaction-double-remove",
+  "title": "Disappearing reactions",
+  "base": "chatroom",
+  "track": "review",
+  "category": "debugging",
+  "difficulty": "easy",
+  "timeLimit": 20,
+  "summary": "Users' emoji reactions vanish in busy channels. Reproduce, find the root cause, and fix it without regressing the hot path.",
+  "tags": ["bug-hunt", "arrays", "events"]
+}

@@ -1,0 +1,11 @@
+{
+  "slug": "kvstore-glob-classes",
+  "title": "Character classes in glob patterns",
+  "base": "kvstore",
+  "track": "precision",
+  "category": "delegation",
+  "difficulty": "easy",
+  "timeLimit": 20,
+  "summary": "Extend the glob matcher with [classes], ranges, negation and escapes, and make sure every pattern-matching command picks it up.",
+  "tags": ["glob", "parsing", "pubsub"]
+}

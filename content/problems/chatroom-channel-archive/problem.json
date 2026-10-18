@@ -1,0 +1,11 @@
+{
+  "slug": "chatroom-channel-archive",
+  "title": "Archive channels",
+  "base": "chatroom",
+  "track": "sprint",
+  "category": "features",
+  "difficulty": "medium",
+  "timeLimit": 45,
+  "summary": "Make archived channels read-only across every write path in an unfamiliar chat backend, including the ones nobody mentions.",
+  "tags": ["feature", "cross-cutting", "authorization", "realtime"]
+}

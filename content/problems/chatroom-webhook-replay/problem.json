@@ -1,0 +1,11 @@
+{
+  "slug": "chatroom-webhook-replay",
+  "title": "Webhook signatures v2: stop replays",
+  "base": "chatroom",
+  "track": "weak",
+  "category": "security",
+  "difficulty": "medium",
+  "timeLimit": 30,
+  "summary": "Replace replayable v1 webhook signatures with timestamped v2 signing, tolerance windows, and replay detection, in both directions.",
+  "tags": ["webhooks", "signatures", "replay", "hmac"]
+}

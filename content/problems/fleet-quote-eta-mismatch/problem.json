@@ -1,0 +1,11 @@
+{
+  "slug": "fleet-quote-eta-mismatch",
+  "title": "\"2 minutes away\" — then 9",
+  "base": "fleet",
+  "track": "weak",
+  "category": "comprehension",
+  "difficulty": "easy",
+  "timeLimit": 20,
+  "summary": "The confirm screen promises a car 2 minutes away; dispatch sends one 9 minutes away. Explain why, then make them agree.",
+  "tags": ["eta", "matching", "consistency", "code-reading"]
+}

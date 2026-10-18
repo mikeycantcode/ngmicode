@@ -1,0 +1,11 @@
+{
+  "slug": "kvstore-expiry-accounting",
+  "title": "Where do expired keys go?",
+  "base": "kvstore",
+  "track": "review",
+  "category": "comprehension",
+  "difficulty": "easy",
+  "timeLimit": 20,
+  "summary": "Explain the store's two expiry paths, then fix INFO expired_keys and the expired event so each expired key is counted exactly once.",
+  "tags": ["expiry", "stats", "events", "code-reading"]
+}

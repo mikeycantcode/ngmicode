@@ -1,0 +1,11 @@
+{
+  "slug": "chatroom-channel-name-rules",
+  "title": "Slack-style channel name rules",
+  "base": "chatroom",
+  "track": "precision",
+  "category": "fundamentals",
+  "difficulty": "easy",
+  "timeLimit": 15,
+  "summary": "Replace a too-permissive channel-name normalizer with exact product rules, steering a literal-minded agent.",
+  "tags": ["strings", "validation", "spec"]
+}

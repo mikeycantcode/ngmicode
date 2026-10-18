@@ -1,0 +1,11 @@
+{
+  "slug": "ledger-fx-convert",
+  "title": "FX conversion: inverse pairs, USD triangulation, stale rates",
+  "base": "ledger",
+  "track": "precision",
+  "category": "delegation",
+  "difficulty": "hard",
+  "timeLimit": 45,
+  "summary": "Delegate a rate-resolution algorithm with fallbacks, staleness and single-step rounding to a literal agent without leaving room for interpretation.",
+  "tags": ["fx", "rounding", "bigint", "spec"]
+}

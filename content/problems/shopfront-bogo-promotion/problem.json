@@ -1,0 +1,11 @@
+{
+  "slug": "shopfront-bogo-promotion",
+  "title": "Buy X, get Y free",
+  "base": "shopfront",
+  "track": "sprint",
+  "category": "features",
+  "difficulty": "hard",
+  "timeLimit": 60,
+  "summary": "Add a 'buy X get Y free' promotion type to the pricing engine and admin API, composing correctly with existing promotions and coupons.",
+  "tags": ["pricing", "promotions", "discount-stacking"]
+}

@@ -1,0 +1,11 @@
+{
+  "slug": "ledger-payment-state-machine",
+  "title": "Extract the payment state machine",
+  "base": "ledger",
+  "track": "weak",
+  "category": "refactoring",
+  "difficulty": "medium",
+  "timeLimit": 45,
+  "summary": "Pull scattered status checks out of PaymentService into a table-driven state machine without losing the behavior nobody wrote a test for.",
+  "tags": ["refactoring", "state-machine", "payments"]
+}

@@ -1,0 +1,11 @@
+{
+  "slug": "chatroom-pinned-messages",
+  "title": "Pinned messages API",
+  "base": "chatroom",
+  "track": "sprint",
+  "category": "data-api",
+  "difficulty": "easy",
+  "timeLimit": 30,
+  "summary": "Design and ship pins.add / pins.remove / pins.list end to end: storage, service, policy, and commands.",
+  "tags": ["api-design", "storage", "authorization"]
+}

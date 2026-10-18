@@ -1,0 +1,11 @@
+{
+  "slug": "taskq-retention-policy",
+  "title": "removeOnComplete / removeOnFail retention",
+  "base": "taskq",
+  "track": "precision",
+  "category": "delegation",
+  "difficulty": "medium",
+  "timeLimit": 45,
+  "summary": "Delegate a retention policy to a literal agent: per-job overrides, keep-N ordering with tie-breaks, and two classes of jobs that must never be deleted.",
+  "tags": ["retention", "spec", "options", "dlq"]
+}

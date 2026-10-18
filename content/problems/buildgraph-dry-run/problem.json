@@ -1,0 +1,11 @@
+{
+  "slug": "buildgraph-dry-run",
+  "title": "build --dry-run",
+  "base": "buildgraph",
+  "track": "weak",
+  "category": "comprehension",
+  "difficulty": "easy",
+  "timeLimit": 30,
+  "summary": "Report each task's hash and cache status without running anything. You have to understand how hashing actually works.",
+  "tags": ["caching", "hashing", "cli"]
+}

@@ -1,0 +1,11 @@
+{
+  "slug": "kvstore-blpop",
+  "title": "Blocking pops (BLPOP)",
+  "base": "kvstore",
+  "track": "weak",
+  "category": "async",
+  "difficulty": "hard",
+  "timeLimit": 60,
+  "summary": "Add BLPOP to a single-threaded engine: park clients on promises, wake them fairly after pushes, honor timeouts on an injected clock, and keep the WAL replayable.",
+  "tags": ["async", "promises", "fairness", "timeouts", "persistence"]
+}

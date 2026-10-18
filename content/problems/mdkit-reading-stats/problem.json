@@ -1,0 +1,11 @@
+{
+  "slug": "mdkit-reading-stats",
+  "title": "Reading-time stats",
+  "base": "mdkit",
+  "track": "precision",
+  "category": "fundamentals",
+  "difficulty": "easy",
+  "timeLimit": 15,
+  "summary": "Implement a word count and reading-time function over the AST, with exact rules for what counts as a word.",
+  "tags": ["ast", "text", "spec"]
+}

@@ -1,0 +1,11 @@
+{
+  "slug": "chatroom-notification-preview",
+  "title": "Notification preview renderer",
+  "base": "chatroom",
+  "track": "precision",
+  "category": "specs",
+  "difficulty": "medium",
+  "timeLimit": 30,
+  "summary": "Specify an exact plain-text preview renderer (tokens, markdown, escaping, word-boundary truncation) to a literal agent.",
+  "tags": ["strings", "rendering", "truncation", "unicode"]
+}

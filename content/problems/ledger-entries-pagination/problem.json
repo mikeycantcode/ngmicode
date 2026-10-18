@@ -1,0 +1,11 @@
+{
+  "slug": "ledger-entries-pagination",
+  "title": "Paginate the account entries endpoint",
+  "base": "ledger",
+  "track": "sprint",
+  "category": "data-api",
+  "difficulty": "easy",
+  "timeLimit": 30,
+  "summary": "Design cursor pagination for an account's journal entries that stays correct when entries share timestamps or arrive back-dated mid-scroll.",
+  "tags": ["api-design", "pagination", "cursors"]
+}

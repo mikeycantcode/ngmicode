@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { toast } from "sonner";
-import { CheckCircle2, ChevronLeft, Files, FileText, FlaskConical, GitBranch, Loader2, NotebookPen, Play, Search, Send, Timer, XCircle } from "lucide-react";
+import { CheckCircle2, ChevronLeft, Files, GitPullRequest, FileText, FlaskConical, GitBranch, Loader2, NotebookPen, Play, Search, Send, Timer, XCircle } from "lucide-react";
 import { useWorkspace, changedFiles, type Persisted, type SidePanel } from "./store";
 import { Explorer } from "./explorer";
 import { SearchPanel } from "./search-panel";
@@ -39,6 +39,7 @@ export interface WorkspaceProblem {
   summary: string;
   starter: Record<string, string>;
   loc: number;
+  repo?: { repo: string; commit: string; license: string; url: string };
 }
 
 function fmtTime(sec: number) {
@@ -65,6 +66,16 @@ function ProblemView({ p }: { p: WorkspaceProblem }) {
         <span className="text-xs text-muted-foreground">· {p.categoryName}</span>
       </div>
       <h1 className="mb-3 text-lg font-semibold">{p.title}</h1>
+      {p.repo && (
+        <a
+          href={`${p.repo.url}/tree/${p.repo.commit}`}
+          target="_blank"
+          rel="noreferrer"
+          className="mb-3 flex w-fit items-center gap-1.5 rounded-md bg-ctp-sapphire/10 px-2 py-1 font-mono text-[11px] text-ctp-sapphire ring-1 ring-ctp-sapphire/25 hover:bg-ctp-sapphire/15"
+        >
+          <GitPullRequest className="size-3" /> real-world · {p.repo.repo}@{p.repo.commit.slice(0, 7)} · {p.repo.license}
+        </a>
+      )}
       <div className="prose-ctp">
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{p.prompt}</ReactMarkdown>
       </div>
@@ -112,7 +123,7 @@ function StatusBar({ p, modelLabel }: { p: WorkspaceProblem; modelLabel: string 
   return (
     <div className="flex h-6 shrink-0 items-center gap-3 bg-ctp-mauve px-2 text-[11px] text-ctp-crust">
       <span className="flex items-center gap-1 font-medium">
-        <GitBranch className="size-3" /> interview/{p.base}
+        <GitBranch className="size-3" /> {p.repo ? `${p.repo.repo}@${p.repo.commit.slice(0, 7)}` : `interview/${p.base}`}
       </span>
       <span>{n} changed</span>
       {run.result && (
@@ -259,7 +270,7 @@ export function Workspace({ problem: p, mode, modelLabel }: { problem: Workspace
               <dl className="mt-3 space-y-2 text-sm">
                 <div className="flex justify-between"><dt className="text-muted-foreground">Format</dt><dd>{TRACKS[p.track].name}</dd></div>
                 <div className="flex justify-between"><dt className="text-muted-foreground">Time</dt><dd>{p.timeLimit} minutes</dd></div>
-                <div className="flex justify-between"><dt className="text-muted-foreground">Codebase</dt><dd className="font-mono">{p.base}</dd></div>
+                <div className="flex justify-between"><dt className="text-muted-foreground">Codebase</dt><dd className="font-mono">{p.repo?.repo ?? p.base}</dd></div>
                 <div className="flex justify-between"><dt className="text-muted-foreground">Size</dt><dd>{Object.keys(p.starter).length} files · {p.loc.toLocaleString()} LOC</dd></div>
                 <div className="flex justify-between"><dt className="text-muted-foreground">Agent</dt><dd className="text-right font-mono text-xs">{modelLabel}</dd></div>
               </dl>

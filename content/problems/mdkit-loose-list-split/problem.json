@@ -1,0 +1,11 @@
+{
+  "slug": "mdkit-loose-list-split",
+  "title": "Numbered steps restart at 1",
+  "base": "mdkit",
+  "track": "review",
+  "category": "debugging",
+  "difficulty": "medium",
+  "timeLimit": 30,
+  "summary": "Since the last release, list items separated by blank lines split into separate lists. The test suite was updated to match the regression.",
+  "tags": ["lists", "regression", "commonmark"]
+}

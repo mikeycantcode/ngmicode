@@ -1,0 +1,11 @@
+{
+  "slug": "taskq-fifo-groups",
+  "title": "Ordered job groups (per-customer FIFO)",
+  "base": "taskq",
+  "track": "sprint",
+  "category": "async",
+  "difficulty": "hard",
+  "timeLimit": 60,
+  "summary": "Add a `group` option so jobs for the same customer run one at a time and in order, across many workers, retries and backoff, while other work keeps flowing.",
+  "tags": ["ordering", "concurrency", "fifo", "message-groups", "retries"]
+}

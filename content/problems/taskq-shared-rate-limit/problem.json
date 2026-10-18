@@ -1,0 +1,11 @@
+{
+  "slug": "taskq-shared-rate-limit",
+  "title": "Rate limit multiplied by worker count",
+  "base": "taskq",
+  "track": "weak",
+  "category": "testing",
+  "difficulty": "easy",
+  "timeLimit": 30,
+  "summary": "Production exceeds a queue's rate limit while every test is green. Get the agent to build a test helper and a failing regression test, then fix the bug the test exposes.",
+  "tags": ["testing", "rate-limiting", "regression-test", "test-helpers"]
+}

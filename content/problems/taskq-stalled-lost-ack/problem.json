@@ -1,0 +1,11 @@
+{
+  "slug": "taskq-stalled-lost-ack",
+  "title": "Duplicate webhooks after a GC pause",
+  "base": "taskq",
+  "track": "weak",
+  "category": "async",
+  "difficulty": "medium",
+  "timeLimit": 45,
+  "summary": "After a frozen worker wakes up, its stale results overwrite the live run: jobs complete twice, completed jobs get retried, and dependents start early.",
+  "tags": ["locks", "stalled-jobs", "idempotency", "race-condition"]
+}

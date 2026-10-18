@@ -1,0 +1,11 @@
+{
+  "slug": "buildgraph-lockfile-diff",
+  "title": "Lockfile diff for install",
+  "base": "buildgraph",
+  "track": "precision",
+  "category": "delegation",
+  "difficulty": "medium",
+  "timeLimit": 30,
+  "summary": "Specify a lockfile diff tightly enough that a literal agent gets multi-version packages, semver ordering and integrity drift right.",
+  "tags": ["lockfile", "semver", "diff", "api"]
+}

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { listProblems } from "@/lib/problems";
+import { listProblems, withoutSource } from "@/lib/problems";
 import { getUser } from "@/lib/auth";
 import { getProgress } from "@/lib/progress";
 import { RoadmapTree } from "./roadmap-tree";
@@ -10,7 +10,7 @@ export const metadata: Metadata = { title: "Roadmap" };
 async function Tree() {
   const user = await getUser();
   const progress = user ? await getProgress(user.id) : {};
-  return <RoadmapTree problems={listProblems()} progress={progress} />;
+  return <RoadmapTree problems={listProblems().map(withoutSource)} progress={progress} />;
 }
 
 export default function RoadmapPage() {

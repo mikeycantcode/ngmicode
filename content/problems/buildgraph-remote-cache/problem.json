@@ -1,0 +1,11 @@
+{
+  "slug": "buildgraph-remote-cache",
+  "title": "Remote cache tier",
+  "base": "buildgraph",
+  "track": "sprint",
+  "category": "integration",
+  "difficulty": "hard",
+  "timeLimit": 60,
+  "summary": "Add a shared remote cache behind the local one across config, runner and CLI. Uploads are async and may fail, and none of that can slow down or break builds.",
+  "tags": ["caching", "async", "integration", "resilience"]
+}

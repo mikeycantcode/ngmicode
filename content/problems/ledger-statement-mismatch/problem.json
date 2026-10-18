@@ -1,0 +1,11 @@
+{
+  "slug": "ledger-statement-mismatch",
+  "title": "Statement doesn't match the balance",
+  "base": "ledger",
+  "track": "review",
+  "category": "debugging",
+  "difficulty": "medium",
+  "timeLimit": 30,
+  "summary": "A customer's monthly statement disagrees with their balance and runs backwards. Two separate defects hide behind one symptom.",
+  "tags": ["accounting", "off-by-one", "sign-conventions"]
+}

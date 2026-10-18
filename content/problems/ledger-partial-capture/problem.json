@@ -1,0 +1,11 @@
+{
+  "slug": "ledger-partial-capture",
+  "title": "Partial capture",
+  "base": "ledger",
+  "track": "sprint",
+  "category": "features",
+  "difficulty": "medium",
+  "timeLimit": 45,
+  "summary": "Let merchants capture less than they authorized: release the remainder, charge the fee on what was captured, keep the books balanced.",
+  "tags": ["payments", "ledger", "api"]
+}

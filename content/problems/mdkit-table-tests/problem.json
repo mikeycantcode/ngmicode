@@ -1,0 +1,11 @@
+{
+  "slug": "mdkit-table-tests",
+  "title": "Table test suite",
+  "base": "mdkit",
+  "track": "sprint",
+  "category": "testing",
+  "difficulty": "medium",
+  "timeLimit": 45,
+  "summary": "Tables lost all their tests in a refactor. Steer the agent to write a spec-driven suite, then fix the bugs it uncovers.",
+  "tags": ["testing", "gfm", "tables", "spec"]
+}

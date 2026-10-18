@@ -1,0 +1,11 @@
+{
+  "slug": "ledger-period-close",
+  "title": "Month-end period close",
+  "base": "ledger",
+  "track": "sprint",
+  "category": "features",
+  "difficulty": "hard",
+  "timeLimit": 60,
+  "summary": "Let finance lock closed months so nothing can be posted into them, through every write path the codebase has.",
+  "tags": ["accounting", "invariants", "api", "multi-tenancy"]
+}

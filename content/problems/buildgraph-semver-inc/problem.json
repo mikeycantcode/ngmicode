@@ -1,0 +1,11 @@
+{
+  "slug": "buildgraph-semver-inc",
+  "title": "semver inc()",
+  "base": "buildgraph",
+  "track": "precision",
+  "category": "fundamentals",
+  "difficulty": "easy",
+  "timeLimit": 20,
+  "summary": "Add a version-bump function whose prerelease rules a literal agent will only get right if you spell them out.",
+  "tags": ["semver", "spec", "prerelease"]
+}

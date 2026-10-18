@@ -1,0 +1,11 @@
+{
+  "slug": "fleet-matching-at-scale",
+  "title": "Batch matching at stadium scale",
+  "base": "fleet",
+  "track": "review",
+  "category": "performance",
+  "difficulty": "hard",
+  "timeLimit": 45,
+  "summary": "Batch dispatch takes ~10s for 10k drivers and 1k requests. Find the hot path and make it sub-second without changing a single assignment.",
+  "tags": ["performance", "spatial-index", "complexity", "matching"]
+}

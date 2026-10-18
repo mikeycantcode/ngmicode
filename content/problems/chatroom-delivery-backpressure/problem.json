@@ -1,0 +1,11 @@
+{
+  "slug": "chatroom-delivery-backpressure",
+  "title": "Backpressure for slow clients",
+  "base": "chatroom",
+  "track": "sprint",
+  "category": "async",
+  "difficulty": "hard",
+  "timeLimit": 45,
+  "summary": "Bound per-connection outbound queues: coalesce and shed ephemeral frames, disconnect slow consumers, retry flaky writes without reordering.",
+  "tags": ["backpressure", "queues", "ordering", "retries", "realtime"]
+}

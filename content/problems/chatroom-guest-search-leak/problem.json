@@ -1,0 +1,11 @@
+{
+  "slug": "chatroom-guest-search-leak",
+  "title": "Guest sees internal messages",
+  "base": "chatroom",
+  "track": "review",
+  "category": "security",
+  "difficulty": "medium",
+  "timeLimit": 30,
+  "summary": "A partner guest account can read internal discussion. Fix the reported hole and audit the read paths for the same class of bug.",
+  "tags": ["authorization", "audit", "guests", "idor"]
+}

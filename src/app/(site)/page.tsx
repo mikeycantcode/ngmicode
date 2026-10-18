@@ -32,7 +32,7 @@ function IdeMock() {
           <div><span className="text-ctp-mauve">export function</span> <span className="text-ctp-blue">refund</span>(p: Payment, amount: <span className="text-ctp-yellow">Cents</span>) {"{"}</div>
           <div className="pl-4"><span className="text-ctp-mauve">if</span> (amount {">"} p.captured - p.refunded)</div>
           <div className="pl-8"><span className="text-ctp-mauve">throw new</span> <span className="text-ctp-yellow">RefundError</span>(<span className="text-ctp-green">&quot;exceeds captured&quot;</span>);</div>
-          <div className="pl-4 bg-ctp-green/10"><span className="text-ctp-green">+</span> postReversal(p, amount); <span className="text-ctp-overlay0">// agent</span></div>
+          <div className="pl-4 bg-ctp-green/10"><span className="text-ctp-green">+</span> postReversal(p, amount); <span className="text-ctp-overlay0">{"// agent"}</span></div>
           <div>{"}"}</div>
           <div className="mt-3 rounded border border-ctp-surface0 bg-ctp-mantle p-2 text-[10px]">
             <span className="text-ctp-green">✓ 14 passed</span> <span className="text-ctp-red">✗ 1 failed</span> — refunds › emits ledger event

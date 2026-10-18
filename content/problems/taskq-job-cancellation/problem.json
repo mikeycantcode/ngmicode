@@ -1,0 +1,11 @@
+{
+  "slug": "taskq-job-cancellation",
+  "title": "Job cancellation API",
+  "base": "taskq",
+  "track": "sprint",
+  "category": "features",
+  "difficulty": "hard",
+  "timeLimit": 60,
+  "summary": "Add queue.cancel(jobId): waiting, delayed, retrying, blocked and running jobs must all stop cleanly, without retries, DLQ entries or stray events.",
+  "tags": ["feature", "cancellation", "state-machine", "workers"]
+}

@@ -1,0 +1,11 @@
+{
+  "slug": "ledger-api-authz-audit",
+  "title": "Pre-launch security review of the partner API",
+  "base": "ledger",
+  "track": "review",
+  "category": "security",
+  "difficulty": "hard",
+  "timeLimit": 45,
+  "summary": "Partners get API keys next week. Audit the API layer for tenant-isolation and authorization holes, fix them, and prove it.",
+  "tags": ["authz", "multi-tenancy", "idempotency", "api"]
+}

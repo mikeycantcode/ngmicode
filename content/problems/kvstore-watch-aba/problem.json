@@ -1,0 +1,11 @@
+{
+  "slug": "kvstore-watch-aba",
+  "title": "Optimistic locks that don't lock",
+  "base": "kvstore",
+  "track": "review",
+  "category": "debugging",
+  "difficulty": "medium",
+  "timeLimit": 30,
+  "summary": "WATCH/EXEC sometimes commits even though the watched key changed. Reproduce both incidents, find the root causes, and fix them without making EXEC abort spuriously.",
+  "tags": ["transactions", "watch", "aba", "expiry"]
+}

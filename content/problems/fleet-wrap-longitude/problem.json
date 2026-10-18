@@ -1,0 +1,11 @@
+{
+  "slug": "fleet-wrap-longitude",
+  "title": "Longitude wrapping helpers",
+  "base": "fleet",
+  "track": "precision",
+  "category": "fundamentals",
+  "difficulty": "easy",
+  "timeLimit": 15,
+  "summary": "Specify two tiny geo helpers so exactly that a literal agent gets the antimeridian, half-open range and -0 right.",
+  "tags": ["geo", "antimeridian", "floating-point", "spec"]
+}

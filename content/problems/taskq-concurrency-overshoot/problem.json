@@ -1,0 +1,11 @@
+{
+  "slug": "taskq-concurrency-overshoot",
+  "title": "concurrency: 3 runs twelve at once",
+  "base": "taskq",
+  "track": "weak",
+  "category": "async",
+  "difficulty": "easy",
+  "timeLimit": 30,
+  "summary": "Bursty enqueues make a worker blow past its concurrency limit. Find the check-then-await race and fix it without losing wake-ups.",
+  "tags": ["race-condition", "concurrency", "workers", "async"]
+}

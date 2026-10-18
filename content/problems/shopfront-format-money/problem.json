@@ -1,0 +1,11 @@
+{
+  "slug": "shopfront-format-money",
+  "title": "Format money for finance",
+  "base": "shopfront",
+  "track": "precision",
+  "category": "fundamentals",
+  "difficulty": "easy",
+  "timeLimit": 20,
+  "summary": "Make formatCents produce finance-grade USD strings: separators, negatives, and no float drift.",
+  "tags": ["money", "formatting", "edge-cases"]
+}

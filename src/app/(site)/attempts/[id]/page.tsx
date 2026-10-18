@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { Suspense } from "react";
-import { CheckCircle2, ChevronLeft, RotateCcw, XCircle } from "lucide-react";
+import { CheckCircle2, ChevronLeft, GitPullRequest, RotateCcw, XCircle } from "lucide-react";
 import { getUser } from "@/lib/auth";
 import { getOwnedAttempt, problemForAttempt } from "@/lib/attempts";
 import { DIMENSIONS, type StoredReport } from "@/lib/grading";
@@ -114,8 +114,8 @@ async function Debrief({ params }: { params: PageProps<"/attempts/[id]">["params
         </div>
       </section>
 
-      <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_420px]">
-        <div className="space-y-6">
+      <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1fr)_420px]">
+        <div className="min-w-0 space-y-6">
           <section className="rounded-xl border bg-card">
             <h2 className="border-b px-5 py-3 text-sm font-semibold">Rubric</h2>
             <div className="divide-y">
@@ -180,6 +180,23 @@ async function Debrief({ params }: { params: PageProps<"/attempts/[id]">["params
                 ))}
               </div>
             </section>
+          )}
+
+          {problem.source && (
+            <a
+              href={problem.source.url}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-3 rounded-xl border bg-card p-5 hover:border-ctp-sapphire/50"
+            >
+              <GitPullRequest className="size-5 shrink-0 text-ctp-sapphire" />
+              <div>
+                <div className="text-sm font-semibold">See how the maintainers actually solved it</div>
+                <div className="text-sm text-muted-foreground">
+                  {problem.repo?.repo} PR #{problem.source.pr}: {problem.source.title}
+                </div>
+              </div>
+            </a>
           )}
 
           {sub && <DiffView diff={sub.diff} />}

@@ -1,0 +1,11 @@
+{
+  "slug": "kvstore-zrangebyscore",
+  "title": "Spec out ZRANGEBYSCORE",
+  "base": "kvstore",
+  "track": "precision",
+  "category": "specs",
+  "difficulty": "medium",
+  "timeLimit": 30,
+  "summary": "Add ZRANGEBYSCORE with exclusive bounds, infinities, WITHSCORES and LIMIT. The agent only does what your spec says.",
+  "tags": ["sorted-sets", "spec-writing", "boundaries"]
+}

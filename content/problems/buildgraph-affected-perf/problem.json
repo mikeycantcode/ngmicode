@@ -1,0 +1,11 @@
+{
+  "slug": "buildgraph-affected-perf",
+  "title": "Affected detection is slow in CI",
+  "base": "buildgraph",
+  "track": "review",
+  "category": "performance",
+  "difficulty": "hard",
+  "timeLimit": 45,
+  "summary": "`affected` takes minutes on the big monorepo. Find the hot paths and fix the complexity without changing a single answer.",
+  "tags": ["performance", "complexity", "graphs"]
+}

@@ -1,0 +1,11 @@
+{
+  "slug": "chatroom-delivered-count",
+  "title": "Trace a message: deliveredTo",
+  "base": "chatroom",
+  "track": "weak",
+  "category": "comprehension",
+  "difficulty": "easy",
+  "timeLimit": 20,
+  "summary": "Trace a message from API call to client sockets, explain the flow, and surface how many connections it reached.",
+  "tags": ["tracing", "events", "realtime", "orientation"]
+}

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { CheckCircle2, Circle, CircleDot, Search, Timer } from "lucide-react";
+import { CheckCircle2, Circle, CircleDot, GitPullRequest, Search, Timer } from "lucide-react";
 import type { ProblemMeta } from "@/lib/content-types";
 import { CATEGORIES, CATEGORY_BY_ID, TRACKS, type TrackId } from "@/lib/taxonomy";
 import { Input } from "@/components/ui/input";
@@ -38,13 +38,14 @@ export function ProblemTable({
   problems: ProblemMeta[];
   progress: Record<string, Progress>;
   signedIn: boolean;
-  initial: { track?: string; category?: string; difficulty?: string };
+  initial: { track?: string; category?: string; difficulty?: string; origin?: string };
 }) {
   const [q, setQ] = useState("");
   const [track, setTrack] = useState<string | undefined>(initial.track);
   const [difficulty, setDifficulty] = useState<string | undefined>(initial.difficulty);
   const [category, setCategory] = useState<string | undefined>(initial.category);
   const [status, setStatus] = useState<"all" | "todo" | "solved">("all");
+  const [origin, setOrigin] = useState<"all" | "real" | "original">(initial.origin === "real" ? "real" : "all");
 
   const rows = useMemo(() => {
     const needle = q.trim().toLowerCase();
@@ -52,12 +53,14 @@ export function ProblemTable({
       if (track && p.track !== track) return false;
       if (difficulty && p.difficulty !== difficulty) return false;
       if (category && p.category !== category) return false;
+      if (origin === "real" && !p.repo) return false;
+      if (origin === "original" && p.repo) return false;
       if (status === "solved" && !progress[p.slug]?.solved) return false;
       if (status === "todo" && progress[p.slug]?.solved) return false;
-      if (needle && !`${p.title} ${p.summary} ${p.base} ${(p.tags ?? []).join(" ")}`.toLowerCase().includes(needle)) return false;
+      if (needle && !`${p.title} ${p.summary} ${p.base} ${p.repo?.repo ?? ""} ${(p.tags ?? []).join(" ")}`.toLowerCase().includes(needle)) return false;
       return true;
     });
-  }, [problems, q, track, difficulty, category, status, progress]);
+  }, [problems, q, track, difficulty, category, status, progress, origin]);
 
   const solved = problems.filter((p) => progress[p.slug]?.solved).length;
 
@@ -89,6 +92,14 @@ export function ProblemTable({
               <span className="capitalize">{d}</span>
             </Chip>
           ))}
+          <span className="mx-1 h-4 w-px bg-border" />
+          <Chip active={origin === "real"} onClick={() => setOrigin(origin === "real" ? "all" : "real")}>
+            <GitPullRequest className="mr-1 inline size-3" />
+            Real-world PRs
+          </Chip>
+          <Chip active={origin === "original"} onClick={() => setOrigin(origin === "original" ? "all" : "original")}>
+            Original codebases
+          </Chip>
           <span className="mx-1 h-4 w-px bg-border" />
           <select
             value={category ?? ""}
@@ -154,7 +165,16 @@ export function ProblemTable({
                     <TrackBadge track={p.track as TrackId} />
                   </td>
                   <td className="hidden py-3 text-xs text-muted-foreground lg:table-cell">{CATEGORY_BY_ID[p.category]?.name}</td>
-                  <td className="hidden py-3 font-mono text-xs text-muted-foreground sm:table-cell">{p.base}</td>
+                  <td className="hidden py-3 font-mono text-xs text-muted-foreground sm:table-cell">
+                    {p.repo ? (
+                      <span className="inline-flex items-center gap-1 text-ctp-sapphire">
+                        <GitPullRequest className="size-3" />
+                        {p.repo.repo}
+                      </span>
+                    ) : (
+                      p.base
+                    )}
+                  </td>
                   <td className="py-3">
                     <DifficultyLabel difficulty={p.difficulty} />
                     {pr?.best != null && <div className="text-[11px] text-muted-foreground tabular-nums">best {pr.best}</div>}

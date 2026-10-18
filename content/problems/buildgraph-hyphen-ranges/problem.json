@@ -1,0 +1,11 @@
+{
+  "slug": "buildgraph-hyphen-ranges",
+  "title": "Hyphen ranges",
+  "base": "buildgraph",
+  "track": "precision",
+  "category": "specs",
+  "difficulty": "medium",
+  "timeLimit": 30,
+  "summary": "Teach the range parser `1.2 - 2.3`: inclusive bounds, partial-version rounding, and the cases that must stay errors.",
+  "tags": ["semver", "parsing", "boundaries"]
+}

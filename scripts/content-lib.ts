@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import type { FileMap, ProblemBundle, ProblemSpec } from "../src/lib/content-types";
+import type { BaseManifest, FileMap, ProblemBundle, ProblemSpec } from "../src/lib/content-types";
 import { CATEGORIES, TRACKS } from "../src/lib/taxonomy";
 import { isTestFile } from "../src/lib/runner/core";
 
@@ -29,6 +29,7 @@ export function hiddenPath(name: string) {
 }
 
 const DIFF_ORDER = { easy: 0, medium: 1, hard: 2 } as const;
+const TS_LIKE = /\.(ts|tsx|mts|js|mjs|jsx)$/;
 
 export function listProblemSlugs(): string[] {
   const dir = path.join(CONTENT, "problems");
@@ -45,6 +46,12 @@ export function validateSpec(spec: ProblemSpec, slug: string): string[] {
   if (![15, 20, 30, 45, 60].includes(spec.timeLimit)) errs.push(`timeLimit must be 15/20/30/45/60`);
   if (!fs.existsSync(path.join(CONTENT, "bases", spec.base))) errs.push(`unknown base ${spec.base}`);
   if (!spec.title || !spec.summary) errs.push(`missing title/summary`);
+  if (spec.base.startsWith("gh-")) {
+    if (!spec.source?.url || !spec.source?.pr) errs.push(`real-repo problem needs source.pr and source.url`);
+    const b = path.join(CONTENT, "bases", spec.base);
+    if (!fs.existsSync(path.join(b, "steercode.json"))) errs.push(`real-repo base needs steercode.json`);
+    if (!fs.readdirSync(b).some((f) => /^licen[cs]e/i.test(f))) errs.push(`real-repo base needs its LICENSE file`);
+  }
   return errs;
 }
 
@@ -62,10 +69,17 @@ export function loadProblem(slug: string): ProblemBundle {
   const prompt = fs.readFileSync(path.join(dir, "prompt.md"), "utf8");
   const rubric = fs.existsSync(path.join(dir, "rubric.md")) ? fs.readFileSync(path.join(dir, "rubric.md"), "utf8") : "";
   const loc = Object.entries(starter)
-    .filter(([p]) => /\.(ts|js|tsx)$/.test(p))
+    .filter(([p]) => TS_LIKE.test(p))
     .reduce((n, [, c]) => n + c.split("\n").length, 0);
+  let repo: BaseManifest["source"];
+  try {
+    repo = base["steercode.json"] ? (JSON.parse(base["steercode.json"]) as BaseManifest).source : undefined;
+  } catch {
+    throw new Error(`invalid steercode.json in base ${spec.base}`);
+  }
   return {
     ...spec,
+    repo,
     order: 0,
     fileCount: Object.keys(starter).length,
     loc,

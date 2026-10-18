@@ -1,0 +1,11 @@
+{
+  "slug": "shopfront-shipping-strategy",
+  "title": "Pluggable shipping methods",
+  "base": "shopfront",
+  "track": "weak",
+  "category": "refactoring",
+  "difficulty": "medium",
+  "timeLimit": 45,
+  "summary": "Refactor the shipping switch statement into registrable calculators without changing a single price, and make every caller use the registry.",
+  "tags": ["refactoring", "strategy-pattern", "behavior-preservation"]
+}

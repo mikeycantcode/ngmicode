@@ -17,9 +17,18 @@ export interface ProblemSpec {
   remove?: string[];
   /** Hidden tests are allowed to pass on the starter (pure explanation/review tasks). */
   starterPasses?: boolean;
+  /** Real-world problems: the pull request this problem replays. */
+  source?: { pr: number; url: string; title: string };
+}
+
+/** content/bases/<id>/steercode.json for real-repo bases. */
+export interface BaseManifest {
+  source?: { repo: string; commit: string; license: string; url: string };
+  alias?: Record<string, string>;
 }
 
 export interface ProblemMeta extends ProblemSpec {
+  repo?: BaseManifest["source"];
   order: number;
   fileCount: number;
   loc: number;

@@ -1,0 +1,11 @@
+{
+  "slug": "shopfront-returns",
+  "title": "Self-service returns",
+  "base": "shopfront",
+  "track": "sprint",
+  "category": "integration",
+  "difficulty": "hard",
+  "timeLimit": 60,
+  "summary": "Ship partial returns end to end: return window, exact cent-level refunds across discounts and tax, restocking, payments, events and order state.",
+  "tags": ["money", "allocation", "state-machine", "payments"]
+}

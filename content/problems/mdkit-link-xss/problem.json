@@ -1,0 +1,11 @@
+{
+  "slug": "mdkit-link-xss",
+  "title": "XSS in rendered comments",
+  "base": "mdkit",
+  "track": "review",
+  "category": "security",
+  "difficulty": "hard",
+  "timeLimit": 45,
+  "summary": "A pentest got script execution through Markdown comments. Find every vector in the URL check, the render paths and the escaping, not just the reported one.",
+  "tags": ["xss", "sanitization", "escaping", "security-review"]
+}

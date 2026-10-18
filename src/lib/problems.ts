@@ -27,3 +27,10 @@ export function getProblem(slug: string): ProblemBundle | null {
   bundleCache.set(slug, b);
   return b;
 }
+
+/** Problem metadata safe for the client: the source PR (which reveals the fix) is removed. */
+export function withoutSource(p: ProblemMeta): ProblemMeta {
+  const copy = { ...p };
+  delete copy.source;
+  return copy;
+}
