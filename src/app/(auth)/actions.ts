@@ -59,7 +59,8 @@ export async function login(_: AuthState, form: FormData): Promise<AuthState> {
   if (await rateLimited()) return { error: "Too many attempts. Try again in a few minutes.", fields: { email } };
   const db = await getDb();
   const [u] = await db.select().from(schema.users).where(eq(schema.users.email, email));
-  if (!u || !(await bcrypt.compare(password, u.passwordHash))) {
+  if (!u || !u.passwordHash || !(await bcrypt.compare(password, u.passwordHash))) {
+    if (u && !u.passwordHash) return { error: "This account uses Google sign-in. Continue with Google instead.", fields: { email } };
     return { error: "Invalid email or password", fields: { email } };
   }
   await createSession({ id: u.id, name: u.name, email: u.email });

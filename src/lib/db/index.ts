@@ -29,6 +29,9 @@ create table if not exists attempts (
   tokens integer not null default 0
 );
 create index if not exists attempts_user_idx on attempts(user_id, slug);
+alter table users add column if not exists google_sub text unique;
+alter table users add column if not exists avatar_url text;
+alter table users alter column password_hash drop not null;
 create table if not exists usage (
   user_id uuid not null references users(id) on delete cascade,
   day text not null,
