@@ -12,7 +12,16 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Practice codebases and vendored upstream repos are lint-exempt by design.
+    "content/**",
+    "data/**",
   ]),
+  {
+    // Underscore-prefixed bindings are intentionally unused (e.g. omitting fields via destructuring).
+    rules: {
+      "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_", varsIgnorePattern: "^_" }],
+    },
+  },
 ]);
 
 export default eslintConfig;
