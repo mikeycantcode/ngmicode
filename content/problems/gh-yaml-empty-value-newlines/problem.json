@@ -1,0 +1,21 @@
+{
+  "slug": "gh-yaml-empty-value-newlines",
+  "title": "Blank lines double on round-trip",
+  "base": "gh-yaml",
+  "track": "review",
+  "category": "comprehension",
+  "difficulty": "easy",
+  "timeLimit": 30,
+  "summary": "Parsing and re-stringifying a document turns every blank line after an empty map value into two. Explain why, then fix it.",
+  "tags": [
+    "real-world",
+    "yaml",
+    "stringify",
+    "round-trip"
+  ],
+  "source": {
+    "pr": 642,
+    "url": "https://github.com/eemeli/yaml/pull/642",
+    "title": "fix: Ensure single newline after key with empty value in stringify output"
+  }
+}

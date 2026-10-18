@@ -1,0 +1,12 @@
+{
+  "slug": "gh-valibot-stringify-json-undefined",
+  "title": "stringifyJson must not clobber the input on failure",
+  "base": "gh-valibot",
+  "track": "precision",
+  "category": "delegation",
+  "difficulty": "easy",
+  "timeLimit": 15,
+  "summary": "When JSON.stringify returns undefined, valibot's stringifyJson action records an issue but then overwrites the dataset value. Make it keep the original input.",
+  "tags": ["real-world", "json", "transformation", "error-handling"],
+  "source": { "pr": 1476, "url": "https://github.com/open-circle/valibot/pull/1476", "title": "fix(stringifyJson): preserve dataset.value when JSON.stringify returns undefined" }
+}

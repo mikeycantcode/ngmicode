@@ -6,7 +6,7 @@ Dictate the three-stage spec (validate → target → smooth) in order, and requ
 - `tests/pricing.test.ts` (update old-curve expectations)
 
 ## Traps
-- **Floating point:** `7/5 − 1.2 = 0.19999999999999996`. Then `×6250` gives 1249.99…, which floors to 1000, not 1250. A literal agent writes the float formula unless told to use exact math.
+- **Floating point:** `7/5 − 1.2 = 0.19999999999999996`. Then `×6250` gives 1249.99…, which floors to 1000, not 1250. Penalize a spec that does not require exact math, even if the result happens to be correct.
 - Ordering: the dead band and step limit apply AFTER the target clamp. The dead band uses strict `< 500` (500 itself moves).
 - Smoothing applies to the "no surge" (demand < 5) target too, so surge decays gradually. An agent may early-return 10 000.
 - A previous value above `maxBps` must be clamped first (config lowered).

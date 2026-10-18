@@ -3,7 +3,7 @@ Validate in the stated order, compute `W`, then for each i: `num = total * w[i]`
 `base[i] = Math.floor(num / W)`, `rem[i] = num % W` (integer modulo, exact while
 `total * w` stays under 2^53 — ~1e9 * 1e7 = 1e16 is the edge; candidates may mention BigInt).
 Leftover `= total - sum(base)`; sort indexes by `rem desc, index asc` and give +1 to the
-first `leftover`. Return a new array. The candidate should hand the literal agent the
+first `leftover`. Return a new array. The candidate should hand the agent the
 algorithm, the tie-break, the error order and the exact messages, then verify with the
 example table.
 

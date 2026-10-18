@@ -1,0 +1,4 @@
+{
+  "source": { "repo": "unjs/ufo", "commit": "f06c800d0c59f2a4a1b9ba65eb6cb61a84419be6", "license": "MIT", "url": "https://github.com/unjs/ufo" },
+  "alias": { "ufo": "src" }
+}

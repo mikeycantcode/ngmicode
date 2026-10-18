@@ -1,0 +1,21 @@
+{
+  "slug": "gh-yaml-flow-key-after-blank",
+  "title": "Flow key after a blank line",
+  "base": "gh-yaml",
+  "track": "review",
+  "category": "debugging",
+  "difficulty": "medium",
+  "timeLimit": 45,
+  "summary": "A block mapping whose next key is a flow sequence fails to parse when a blank line or comment sits in between. Fix it in the parser.",
+  "tags": [
+    "real-world",
+    "yaml",
+    "parser",
+    "cst"
+  ],
+  "source": {
+    "pr": 700,
+    "url": "https://github.com/eemeli/yaml/pull/700",
+    "title": "fix: Parse a flow collection map key preceded by a blank line or comment"
+  }
+}

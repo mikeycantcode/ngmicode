@@ -29,7 +29,7 @@ All changes are in `src/scheduler/cron.ts`:
 - **Names as range endpoints.** Handling names only as single values breaks `MON-FRI` and
   `feb-mar`.
 - **Month name off-by-one.** JAN must be 1, not 0.
-- The literal agent will not update the visible tests unless told to. It may also "fix" the
+- A spec that does not mention the visible tests lets the agent guess. It may also "fix" the
   failing tests by reverting the behaviour.
 
 ## Strong signals

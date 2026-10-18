@@ -1,6 +1,6 @@
 ## Intended approach
 
-This is a precision exercise. The candidate turns the 10-rule spec into an instruction the literal
+This is a precision exercise. The candidate turns the 10-rule spec into an instruction the
 agent cannot misread. The reference solution is the original `src/utils/backoff.ts`: validate
 attempt, normalise a number to fixed, validate type, delay and jitter, compute the base, cap, apply
 jitter with one `rng()` call, then `Math.round`.
@@ -25,7 +25,7 @@ rng-call rule.
 - **RNG consumption.** Calling `rng()` unconditionally, even with `jitter: 0`, shifts the seeded
   sequence. Hidden test 2 counts calls.
 - **Exponent off-by-one.** `2^attempt` instead of `2^(attempt-1)`.
-- **Messages.** The literal agent will invent messages unless given the exact strings.
+- **Messages.** A vague spec lets the agent invent messages. Penalize specs without the exact strings.
 - Negative numeric shorthand (`-5`) must hit the delay validation message.
 
 ## Strong signals

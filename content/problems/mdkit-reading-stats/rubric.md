@@ -1,5 +1,5 @@
 ## Intended approach
-Candidate gives the literal agent a precise algorithm. Walk the AST with the existing
+Candidate gives the agent a precise algorithm. Walk the AST with the existing
 `walk()` helper. Collect one string per heading/paragraph/table cell using the existing
 `toText()`, which already handles emphasis, links, inline code, image alt and breaks.
 Optionally add code block values. Join the chunks with whitespace, split on `\s+`, and keep

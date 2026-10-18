@@ -1,0 +1,21 @@
+{
+  "slug": "gh-zod-xor-multiple-match",
+  "title": "Distinct z.xor() overlap error",
+  "base": "gh-zod",
+  "track": "weak",
+  "category": "features",
+  "difficulty": "medium",
+  "timeLimit": 30,
+  "summary": "When several z.xor() options match, the issue says only \"Invalid input\". Report which options matched and give it its own English message.",
+  "tags": [
+    "real-world",
+    "zod",
+    "errors",
+    "unions"
+  ],
+  "source": {
+    "pr": 6376,
+    "url": "https://github.com/colinhacks/zod/pull/6376",
+    "title": "fix(v4): give z.xor() a distinct error when multiple options match"
+  }
+}

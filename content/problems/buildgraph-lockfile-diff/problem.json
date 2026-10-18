@@ -6,6 +6,6 @@
   "category": "delegation",
   "difficulty": "medium",
   "timeLimit": 30,
-  "summary": "Specify a lockfile diff tightly enough that a literal agent gets multi-version packages, semver ordering and integrity drift right.",
+  "summary": "Specify a lockfile diff tightly: multi-version packages, semver ordering and integrity drift.",
   "tags": ["lockfile", "semver", "diff", "api"]
 }

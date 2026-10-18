@@ -1,0 +1,21 @@
+{
+  "slug": "gh-zod-datetime-seconds",
+  "title": "RFC 3339 seconds in datetime",
+  "base": "gh-zod",
+  "track": "precision",
+  "category": "specs",
+  "difficulty": "easy",
+  "timeLimit": 20,
+  "summary": "Make z.iso.datetime() require seconds whenever the time carries a Z or an offset, without changing the local or explicit-precision forms.",
+  "tags": [
+    "real-world",
+    "zod",
+    "regex",
+    "dates"
+  ],
+  "source": {
+    "pr": 6457,
+    "url": "https://github.com/colinhacks/zod/pull/6457",
+    "title": "fix(v4)!: require seconds once a datetime carries a Z or an offset"
+  }
+}

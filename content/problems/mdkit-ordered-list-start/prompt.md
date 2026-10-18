@@ -11,7 +11,7 @@ The block parser already stores the number on the list node (`List.start`, see
 `src/core/ast.ts`). But both renderers ignore it. The HTML shows "1. 2." and the
 plain-text export (used in emails) does too.
 
-Your agent is in **literal mode**: it does exactly what you say and infers nothing.
+Your instructions to the agent are graded for precision.
 Your job is to delegate this so precisely that the agent cannot get it wrong.
 
 ## Required behavior

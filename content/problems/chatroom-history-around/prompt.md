@@ -13,8 +13,7 @@ around(actorId: string, channelId: string, messageId: string, limit: number): {
 }
 ```
 
-Your agent is in **literal mode**. It does exactly what you say and fills no
-gaps on its own. You're scored on how precisely you delegate.
+Your instructions to the agent are graded for precision. You're scored on how precisely you delegate.
 
 ## Rules
 

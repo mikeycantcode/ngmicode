@@ -22,7 +22,7 @@ const DETAIL: Record<TrackId, { real: string; skills: string[]; scored: string }
   precision: {
     real: "Interviewers increasingly test whether you can specify behavior exactly — the skill that separates engineers who direct agents from those who get directed by them.",
     skills: ["Name files, functions and signatures", "Specify ordering, tie-breaks, rounding, errors", "Anticipate edge cases before the agent does", "Narrate intent in notes"],
-    scored: "Communication & precision is 40% of the rubric. The literal agent will stop and ask if you leave gaps.",
+    scored: "Communication & precision is 40% of the rubric. Vague instructions that happen to work still score low.",
   },
   review: {
     real: "Code-comprehension rounds hand you existing code with a few hundred lines across files and ask you to read, debug and optimize it, with an AI assistant available.",
@@ -47,7 +47,7 @@ export default function FormatsPage() {
             <section key={t.id} className="rounded-xl border bg-card p-6">
               <div className="flex flex-wrap items-baseline gap-3">
                 <h2 className={`text-xl font-semibold ${TRACK_TEXT[t.id]}`}>{t.name}</h2>
-                <span className="font-mono text-xs text-muted-foreground">agent: {MODEL_LABELS[model] ?? model}{t.agent === "literal" ? " (literal mode)" : ""}</span>
+                <span className="font-mono text-xs text-muted-foreground">agent: {MODEL_LABELS[model] ?? model}</span>
                 <span className="ml-auto text-xs text-muted-foreground">{problems.filter((p) => p.track === t.id).length} problems</span>
               </div>
               <p className="mt-3 text-sm">{t.description}</p>

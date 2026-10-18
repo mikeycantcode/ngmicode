@@ -1,0 +1,12 @@
+{
+  "slug": "gh-immer-reverse-mutates-base",
+  "title": "reverse() then write mutates the base",
+  "base": "gh-immer",
+  "track": "review",
+  "category": "debugging",
+  "difficulty": "hard",
+  "timeLimit": 60,
+  "summary": "With the array-methods plugin, reversing or sorting a draft array and then editing an element writes straight into the caller's original state.",
+  "tags": ["real-world", "immer", "proxies", "immutability", "patches"],
+  "source": { "pr": 1255, "url": "https://github.com/immerjs/immer/pull/1255", "title": "fix: draft relocated base refs after reverse/sort in array-methods plugin" }
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "gh-yaml-reviver-source",
+  "title": "Reviver source text & raw JSON",
+  "base": "gh-yaml",
+  "track": "sprint",
+  "category": "features",
+  "difficulty": "hard",
+  "timeLimit": 60,
+  "summary": "Bring YAML.parse/stringify up to ES2026 JSON parity: pass a context with the scalar's source text to revivers, and serialize JSON.rawJSON values verbatim.",
+  "tags": [
+    "real-world",
+    "yaml",
+    "parser",
+    "api-parity"
+  ],
+  "remove": [
+    "tests/rawJSON.test.ts",
+    "src/rawjson.d.ts"
+  ],
+  "source": {
+    "pr": 726,
+    "url": "https://github.com/eemeli/yaml/pull/726",
+    "title": "Include context arg in reviver calls + serialize raw JSON values"
+  }
+}

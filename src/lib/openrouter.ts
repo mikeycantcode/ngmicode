@@ -10,8 +10,8 @@ export function openrouterHeaders() {
   return {
     Authorization: `Bearer ${key}`,
     "Content-Type": "application/json",
-    "HTTP-Referer": process.env.PUBLIC_URL || "https://steercode.app",
-    "X-Title": "SteerCode",
+    "HTTP-Referer": process.env.PUBLIC_URL || "https://ngmicode.app",
+    "X-Title": "ngmicode",
   };
 }
 

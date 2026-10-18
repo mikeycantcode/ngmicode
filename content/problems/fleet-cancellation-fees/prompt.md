@@ -4,7 +4,7 @@ Rider Ops has finalized a new cancellation-fee policy. Riders complained about b
 when the *driver* was the one running late. Drivers complained that riders keep them waiting
 at the pickup and then cancel for the same flat $5.
 
-**Your agent runs in literal mode.** It does exactly what you say and infers nothing. You are
+**Your instructions to the agent are graded for precision.** You are
 scored on how precisely you delegate this, not on typing the code yourself.
 
 ## Scope

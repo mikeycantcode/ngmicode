@@ -238,3 +238,20 @@
 .prose-ctp th, .prose-ctp td { border: 1px solid var(--border); padding: 0.3rem 0.6rem; text-align: left; }
 .prose-ctp th { background: var(--ctp-surface0); }
 .prose-ctp hr { border-color: var(--border); margin: 1rem 0; }
+
+/* Terminal-style markdown inside the agent panel */
+.prose-term { font-family: var(--font-jetbrains), ui-monospace, monospace; font-size: 12.5px; line-height: 1.6; color: var(--ctp-text); }
+.prose-term p { margin: 0 0 0.5rem; }
+.prose-term p:last-child { margin-bottom: 0; }
+.prose-term ul { list-style: none; padding-left: 0; margin: 0.25rem 0 0.5rem; }
+.prose-term ul > li::before { content: "- "; color: var(--ctp-overlay1); }
+.prose-term ol { list-style: decimal; padding-left: 1.4rem; margin: 0.25rem 0 0.5rem; }
+.prose-term h1, .prose-term h2, .prose-term h3 { font-size: 12.5px; font-weight: 700; margin: 0.5rem 0 0.25rem; }
+.prose-term strong { font-weight: 700; }
+.prose-term em { color: var(--ctp-subtext1); }
+.prose-term code { color: var(--ctp-mauve); }
+.prose-term pre { margin: 0.4rem 0; padding: 0.5rem 0.6rem; border-left: 2px solid var(--ctp-surface1); background: var(--ctp-mantle); overflow-x: auto; }
+.prose-term pre code { color: var(--ctp-text); }
+.prose-term a { color: var(--ctp-blue); text-decoration: underline; }
+.prose-term table { border-collapse: collapse; margin: 0.4rem 0; }
+.prose-term th, .prose-term td { border: 1px solid var(--ctp-surface1); padding: 0.15rem 0.5rem; }

@@ -9,7 +9,7 @@ export type ApiMessage =
   | { role: "assistant"; content: string | null; tool_calls?: ToolCall[] }
   | { role: "tool"; tool_call_id: string; content: string };
 
-export type AgentMode = "strong" | "weak" | "literal";
+export type AgentMode = "strong" | "weak";
 
 export interface AgentLimits {
   maxStepsPerTurn: number;
@@ -20,7 +20,6 @@ export interface AgentLimits {
 
 export const AGENT_LIMITS: Record<AgentMode, AgentLimits> = {
   strong: { maxStepsPerTurn: 30, maxReadLines: 800, contextMessages: 0 },
-  literal: { maxStepsPerTurn: 20, maxReadLines: 800, contextMessages: 0 },
   weak: { maxStepsPerTurn: 8, maxReadLines: 120, contextMessages: 16 },
 };
 

@@ -5,8 +5,8 @@ The rule lives in `src/pricing/tiers.ts` (`volumeTierRule`) and is plugged into 
 pricing engine through `volume_tier` promotions. Today it looks at each cart line on its
 own and rounds half-up.
 
-Your agent is in **literal mode**: it does exactly what you say and never fills gaps. A
-wrong word in your instructions becomes a wrong line of code. Constrain it so it cannot go
+Your instructions to the agent are graded for precision. A vague or wrong word in your
+instructions scores low, even if the agent happens to get it right. Constrain it so it cannot go
 wrong.
 
 ## New behavior (v2)

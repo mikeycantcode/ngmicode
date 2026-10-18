@@ -6,6 +6,6 @@
   "category": "specs",
   "difficulty": "medium",
   "timeLimit": 30,
-  "summary": "Specify a largest-remainder cent allocator so a literal agent gets tie-breaks, zero weights and errors exactly right.",
+  "summary": "Specify a largest-remainder cent allocator precisely: tie-breaks, zero weights and errors.",
   "tags": ["money", "rounding", "algorithms"]
 }

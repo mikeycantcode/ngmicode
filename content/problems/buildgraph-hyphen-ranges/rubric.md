@@ -12,7 +12,7 @@ automatically because splitting on `||` happens first.
 
 ## Traps
 - **Partial upper bound is exclusive of the next minor/major.** Zero-filling (`2.3` -> `<=2.3.0`) is the classic
-  literal-agent result. It wrongly rejects `2.3.9` for `1.2.3 - 2.3`.
+  result of a vague spec. It wrongly rejects `2.3.9` for `1.2.3 - 2.3`.
 - Missing the `-0` suffix on the exclusive upper bound changes `toString()`, and it changes prerelease semantics.
 - Detecting hyphens with `includes("-")` breaks `1.2.3-2.3.4` and every prerelease version.
 - The operator-gluing regex runs first. `>=1 - 2` has to be rejected, not glued.

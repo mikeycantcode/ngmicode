@@ -9,7 +9,7 @@ const inter = Inter({ variable: "--font-sans", subsets: ["latin"] });
 const mono = JetBrains_Mono({ variable: "--font-jetbrains", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: { default: "SteerCode — practice AI-assisted coding interviews", template: "%s · SteerCode" },
+  title: { default: "ngmicode — practice AI-assisted coding interviews", template: "%s · ngmicode" },
   description:
     "Free practice for the new generation of coding interviews: steer a coding agent through real codebases, write precise specs, and get graded by an AI interviewer.",
 };

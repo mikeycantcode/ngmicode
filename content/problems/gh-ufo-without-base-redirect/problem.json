@@ -1,0 +1,12 @@
+{
+  "slug": "gh-ufo-without-base-redirect",
+  "title": "Open redirect through withoutBase",
+  "base": "gh-ufo",
+  "track": "weak",
+  "category": "security",
+  "difficulty": "easy",
+  "timeLimit": 20,
+  "summary": "A framework strips its mount prefix with withoutBase and redirects to the result. Some inputs send users to another site. Find and close the hole.",
+  "tags": ["real-world", "open-redirect", "url-parsing", "typescript"],
+  "source": { "pr": 335, "url": "https://github.com/unjs/ufo/pull/335", "title": "fix(withoutBase): collapse leading slashes" }
+}

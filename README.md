@@ -1,4 +1,6 @@
-# SteerCode
+# ngmicode
+
+[![CI](https://github.com/mikeycantcode/ngmicode/actions/workflows/ci.yml/badge.svg)](https://github.com/mikeycantcode/ngmicode/actions/workflows/ci.yml)
 
 **Free practice for AI-assisted coding interviews.** NeetCode, rebuilt for the rounds where you
 steer a coding agent through a real codebase, under a clock, and then defend your work.
@@ -12,12 +14,16 @@ new format.
 |---|---|---|
 | **Codebase Sprint** | Large unfamiliar repo, ship a feature in 30–60 min | Frontier model (`deepseek/deepseek-v4.1-flash`) |
 | **Weak Agent** | Moderate repo, a small/older model with a short memory | `openai/gpt-5.6-luna`, last ~16 messages, 8 steps/turn |
-| **Precision Spec** | Small task, the agent does *exactly* what you write and asks when you leave gaps | Frontier model in literal mode |
+| **Precision Spec** | Small task; graded on how precisely you specify behavior | Frontier model |
 | **Debug & Review** | Read, debug and optimize existing code with an AI pair | Frontier model |
 
-100 problems across 8 production-shaped TypeScript codebases (ledger, job queue, e-commerce,
-markdown toolkit, KV store, team chat, ride dispatch, build orchestrator), 13 topics on a
-NeetCode-style roadmap tree, easy → hard.
+140 problems, easy → hard, on a NeetCode-style roadmap tree of 13 topics:
+
+- **100 on original codebases**: 8 production-shaped TypeScript repos (ledger, job queue, e-commerce,
+  markdown toolkit, KV store, team chat, ride dispatch, build orchestrator).
+- **40 real-world PRs (SWE-bench style)** from hono, zod, yaml, immer, valibot, remeda, superstruct
+  and ufo. The starter is the pinned repo with a merged PR reverted, the PR's tests are the hidden
+  tests, and after you submit you can compare your fix with the maintainers'.
 
 ## How grading works
 

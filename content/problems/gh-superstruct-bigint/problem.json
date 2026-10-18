@@ -1,0 +1,21 @@
+{
+  "slug": "gh-superstruct-bigint",
+  "title": "Add a bigint() struct",
+  "base": "gh-superstruct",
+  "track": "weak",
+  "category": "features",
+  "difficulty": "easy",
+  "timeLimit": 20,
+  "summary": "Users storing 64-bit IDs as BigInt have no struct to validate them. Guide a weak agent to add bigint() in the library's own idiom, with fixtures.",
+  "tags": ["real-world", "api-design", "types"],
+  "remove": [
+    "test/validation/bigint/invalid-number.ts",
+    "test/validation/bigint/invalid.ts",
+    "test/validation/bigint/valid.ts"
+  ],
+  "source": {
+    "pr": 945,
+    "url": "https://github.com/ianstormtaylor/superstruct/pull/945",
+    "title": "Add `bigint` support"
+  }
+}

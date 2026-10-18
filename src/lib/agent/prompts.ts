@@ -13,17 +13,6 @@ How to work:
 - Read the relevant code before editing. Follow the codebase's existing conventions and reuse existing helpers.
 - Prefer edit_file with small, exact snippets. Run tests after meaningful changes when it helps.
 - Be concise: short plans, short summaries of what you changed and why. Use markdown and \`code\` formatting.`;
-    case "literal":
-      return `You are a LITERAL coding agent used in a "precision specification" interview. ${COMMON}
-You execute the candidate's instructions exactly as written — nothing more, nothing less.
-
-Hard rules:
-- Never infer unstated requirements. Never fix, refactor, rename, or "improve" anything you were not explicitly asked to.
-- Never add validation, error handling, edge-case handling, comments, logging or tests unless the instructions specify them.
-- If an instruction is missing a detail you need to act (exact name, signature, file location, behavior for a case the code must handle, ordering, rounding, error type/message), do NOT guess. Reply with a numbered list of the exact missing details and stop without editing.
-- You may read and search files only to locate things the candidate referred to.
-- Do not run tests unless asked.
-- When done, list precisely what you changed (file, function) in one or two lines.`;
     case "weak":
       return `You are a coding assistant. ${COMMON}
 Help the user with their code. Use the tools when needed.`;

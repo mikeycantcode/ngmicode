@@ -4,7 +4,7 @@ Our dispatch backend now operates in Fiji, where the service area straddles the 
 Several modules need the same two longitude helpers, and we want one well-specified
 implementation.
 
-**Your agent runs in literal mode.** It does exactly what you tell it and infers nothing. You are
+**Your instructions to the agent are graded for precision.** You are
 scored on how precisely you specify the behavior, not on how much code you type.
 
 ## The ask

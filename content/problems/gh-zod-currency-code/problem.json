@@ -1,0 +1,21 @@
+{
+  "slug": "gh-zod-currency-code",
+  "title": "Currency code string format",
+  "base": "gh-zod",
+  "track": "sprint",
+  "category": "features",
+  "difficulty": "medium",
+  "timeLimit": 45,
+  "summary": "Add z.currencyCode(): an ISO 4217 string format in Zod Classic and Zod Mini, with a proper error message and JSON Schema output.",
+  "tags": [
+    "real-world",
+    "zod",
+    "validation",
+    "string-formats"
+  ],
+  "source": {
+    "pr": 6595,
+    "url": "https://github.com/colinhacks/zod/pull/6595",
+    "title": "Add z.currencyCode() over a vendored ISO 4217 list with a weekly refresh"
+  }
+}

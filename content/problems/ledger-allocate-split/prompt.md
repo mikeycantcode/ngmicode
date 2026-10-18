@@ -5,7 +5,7 @@ sellers by weight. For example, a $100.00 order is split 1:1:1 across three sell
 Finance has one rule: **the parts must add up to the total exactly, every time.**
 They also want the split to be deterministic and "as fair as possible".
 
-Your agent is in **literal mode**. Write the spec it implements.
+Your instructions to the agent are graded for precision. Write the spec it implements.
 
 ## The ask
 

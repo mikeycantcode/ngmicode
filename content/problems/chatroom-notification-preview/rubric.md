@@ -1,7 +1,7 @@
 ## Intended approach
 Strip markdown characters from the raw canonical text **first**, then substitute tokens, then un-escape entities
 in a **single pass**, then collapse whitespace, then truncate with the exact boundary rules. The candidate should
-translate each numbered rule into an unambiguous instruction for the literal agent, including the processing
+translate each numbered rule into an unambiguous instruction for the agent, including the processing
 order (the spec lists it implicitly), and verify with crafted inputs.
 
 ## Key files

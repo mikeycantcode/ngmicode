@@ -4,7 +4,7 @@ Teams are migrating manifests from another tool that writes ranges like `"1.2.3 
 Today `new Range("1.2.3 - 2.3.4")` throws `Invalid range`. Add hyphen-range support to the
 range parser in `src/semver/range.ts`.
 
-Your agent is in **literal mode**. It does exactly what you say. The difficulty is in the
+Your instructions to the agent are graded for precision. The difficulty is in the
 boundaries, so specify them precisely.
 
 ## Semantics

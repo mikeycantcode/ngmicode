@@ -49,7 +49,7 @@ export function validateSpec(spec: ProblemSpec, slug: string): string[] {
   if (spec.base.startsWith("gh-")) {
     if (!spec.source?.url || !spec.source?.pr) errs.push(`real-repo problem needs source.pr and source.url`);
     const b = path.join(CONTENT, "bases", spec.base);
-    if (!fs.existsSync(path.join(b, "steercode.json"))) errs.push(`real-repo base needs steercode.json`);
+    if (!fs.existsSync(path.join(b, "ngmicode.json"))) errs.push(`real-repo base needs ngmicode.json`);
     if (!fs.readdirSync(b).some((f) => /^licen[cs]e/i.test(f))) errs.push(`real-repo base needs its LICENSE file`);
   }
   return errs;
@@ -73,9 +73,9 @@ export function loadProblem(slug: string): ProblemBundle {
     .reduce((n, [, c]) => n + c.split("\n").length, 0);
   let repo: BaseManifest["source"];
   try {
-    repo = base["steercode.json"] ? (JSON.parse(base["steercode.json"]) as BaseManifest).source : undefined;
+    repo = base["ngmicode.json"] ? (JSON.parse(base["ngmicode.json"]) as BaseManifest).source : undefined;
   } catch {
-    throw new Error(`invalid steercode.json in base ${spec.base}`);
+    throw new Error(`invalid ngmicode.json in base ${spec.base}`);
   }
   return {
     ...spec,

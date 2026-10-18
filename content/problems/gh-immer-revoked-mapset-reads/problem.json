@@ -1,0 +1,12 @@
+{
+  "slug": "gh-immer-revoked-mapset-reads",
+  "title": "Revocation for Map and Set drafts",
+  "base": "gh-immer",
+  "track": "sprint",
+  "category": "features",
+  "difficulty": "medium",
+  "timeLimit": 45,
+  "summary": "Leaked Map and Set drafts keep answering reads with stale data after produce() returns. Make every read path enforce revocation, like object drafts do.",
+  "tags": ["real-world", "immer", "map-set", "lifecycle", "error-handling"],
+  "source": { "pr": 1298, "url": "https://github.com/immerjs/immer/pull/1298", "title": "fix: throw on reads of a revoked Map or Set draft" }
+}

@@ -1,0 +1,9 @@
+{
+  "source": {
+    "repo": "open-circle/valibot",
+    "commit": "2d29dbf04d272341a1e617070bd0b03eda8c4404",
+    "license": "MIT",
+    "url": "https://github.com/open-circle/valibot"
+  },
+  "alias": { "valibot": "src/index.ts" }
+}

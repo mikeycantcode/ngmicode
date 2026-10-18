@@ -1,0 +1,21 @@
+{
+  "slug": "gh-remeda-uniquewith-self-unequal",
+  "title": "uniqueWith drops items that aren't equal to themselves",
+  "base": "gh-remeda",
+  "track": "precision",
+  "category": "delegation",
+  "difficulty": "easy",
+  "timeLimit": 20,
+  "summary": "A non-reflexive comparator makes uniqueWith silently delete items; fix the dedupe rule in both the eager and the lazy path.",
+  "tags": [
+    "real-world",
+    "remeda",
+    "lazy-evaluation",
+    "comparators"
+  ],
+  "source": {
+    "pr": 1001,
+    "url": "https://github.com/remeda/remeda/pull/1001",
+    "title": "fix(uniqueWith): return items that are not equal to themselves"
+  }
+}

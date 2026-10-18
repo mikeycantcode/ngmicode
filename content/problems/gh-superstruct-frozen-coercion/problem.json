@@ -1,0 +1,23 @@
+{
+  "slug": "gh-superstruct-frozen-coercion",
+  "title": "create() crashes on frozen input",
+  "base": "gh-superstruct",
+  "track": "weak",
+  "category": "testing",
+  "difficulty": "medium",
+  "timeLimit": 45,
+  "summary": "create() throws a TypeError on a frozen object for one struct. Steer a weak agent to write a frozen-input test matrix, find every affected struct, and fix them all.",
+  "tags": ["real-world", "immutability", "coercion", "testing"],
+  "remove": [
+    "test/validation/array/valid-frozen.ts",
+    "test/validation/object/valid-frozen.ts",
+    "test/validation/record/valid-frozen.ts",
+    "test/validation/tuple/valid-frozen.ts",
+    "test/validation/type/valid-frozen.ts"
+  ],
+  "source": {
+    "pr": 1151,
+    "url": "https://github.com/ianstormtaylor/superstruct/pull/1151",
+    "title": "Allow frozen objects/arrays to be coerced"
+  }
+}

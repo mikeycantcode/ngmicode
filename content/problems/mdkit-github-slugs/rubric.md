@@ -1,5 +1,5 @@
 ## Intended approach
-Candidate turns the brief into an exact implementation spec for the literal agent:
+Candidate turns the brief into an exact implementation spec for the agent:
 `text.trim().toLowerCase().replace(/[^\p{L}\p{M}\p{N}\p{Pc}\-\s]/gu, "").replace(/\s/g, "-")`.
 They state that the `u` flag is required and name each Unicode property class. They
 remove the old collapse and trim steps, keep the `|| "section"` fallback in `Slugger.slug`,
@@ -15,7 +15,7 @@ They also update the header comment.
 - **`\w` is ASCII.** "Keep letters" without naming `\p{L}` gives `caf-crme`.
 - **Combining marks.** `\p{L}` alone strips U+0301 from decomposed text. Hidden test 1 checks this.
 - **Missing `u` flag.** `\p{…}` without `u` is a syntax error or a literal match.
-- **Leftover legacy steps.** A literal agent told to "change the character class" keeps
+- **Leftover legacy steps.** A vague spec ("change the character class") lets the agent keep
   `.replace(/-{2,}/g, "-")` and the edge-dash trim. Then `c--c`, `a---b` and `-launch` fail.
 - **`\s+` vs `\s`.** Replacing runs of whitespace with one dash collapses `a  b`.
   GitHub maps each whitespace character to one dash.

@@ -1,0 +1,12 @@
+{
+  "slug": "gh-valibot-prototype-keys",
+  "title": "Prototype-named keys slip through object schemas",
+  "base": "gh-valibot",
+  "track": "weak",
+  "category": "security",
+  "difficulty": "medium",
+  "timeLimit": 45,
+  "summary": "Keys like toString or __proto__ are mistaken for declared entries in strictObject, looseObject and objectWithRest. Steer a weak agent to fix every variant, sync and async.",
+  "tags": ["real-world", "prototype-pollution", "validation", "async-parity"],
+  "source": { "pr": 1523, "url": "https://github.com/open-circle/valibot/pull/1523", "title": "fix: handle object keys that collide with Object.prototype in object schemas" }
+}

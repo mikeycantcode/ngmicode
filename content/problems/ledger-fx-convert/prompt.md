@@ -5,7 +5,7 @@ publishes `USD/EUR`. Today `FxService.convert` in `src/services/fxService.ts`
 only uses a **direct** pair (ticket LEDG-340). Any other conversion fails with
 `NoRateError`, so EUR→JPY is impossible even though EUR/USD and USD/JPY are loaded.
 
-Your agent is in **literal mode**. Delegate this change precisely. The change
+Your instructions to the agent are graded for precision. Delegate this change precisely. The change
 should stay inside `src/services/fxService.ts`.
 
 ## Required behavior of `convert(m, to, at = now)`

@@ -1,7 +1,7 @@
 ## Intended approach
 A single, ordered pipeline in `normalizeChannelName`: lowercase → map `[\s_.]+` to `-` → drop `[^a-z0-9-]` →
 collapse `-+` → trim hyphens → slice(0, 80) → trim trailing hyphens again → empty check → reserved check.
-The candidate should hand the literal agent the steps *in order*, with the exact error strings, and should
+The candidate should hand the agent the steps *in order*, with the exact error strings, and should
 check the result against the examples (ideally by asking the agent to add a few test cases).
 
 ## Key files
@@ -9,7 +9,7 @@ check the result against the examples (ideally by asking the agent to add a few 
 - `src/util/errors.ts` (`ValidationError(message, field)`)
 
 ## Traps
-- **Truncate then re-strip.** If the 81st character comes right after a hyphen, slicing to 80 leaves a trailing hyphen. A literal agent won't re-strip unless told to.
+- **Truncate then re-strip.** If the 81st character comes right after a hyphen, slicing to 80 leaves a trailing hyphen. Penalize a spec that omits the re-strip, even if the result happens to be correct.
 - **Reserved check must run on the normalized value.** `"@Here"` and `" here "` must both be rejected. If the check runs on raw input, both slip through.
 - **Order of steps 2 and 3.** If invalid characters are removed before separators are mapped, then `_` and `.` disappear and `design_team` becomes `designteam`.
 - The empty check must run after every strip. `"!!!"` and `"--"` must throw, not return `""`.

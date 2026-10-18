@@ -152,15 +152,22 @@ function deepEqual(a: unknown, b: unknown, strict = false, seen = new Map<unknow
   return true;
 }
 
-function matchesObject(actual: unknown, expected: unknown): boolean {
+function matchesObject(actual: unknown, expected: unknown, seen = new Map<unknown, unknown>()): boolean {
   if (expected instanceof Asymmetric) return expected.asymmetricMatch(actual);
   if (typeof expected !== "object" || expected === null) return deepEqual(actual, expected);
   if (typeof actual !== "object" || actual === null) return false;
+  if (seen.get(expected) === actual) return true;
+  seen.set(expected, actual);
   if (Array.isArray(expected)) {
-    return Array.isArray(actual) && actual.length === expected.length && expected.every((e, i) => matchesObject(actual[i], e));
+    return Array.isArray(actual) && actual.length === expected.length && expected.every((e, i) => matchesObject(actual[i], e, seen));
   }
-  if (expected instanceof Date || expected instanceof Map || expected instanceof Set || expected instanceof RegExp) return deepEqual(actual, expected);
-  return Object.entries(expected).every(([k, v]) => matchesObject((actual as Record<string, unknown>)[k], v));
+  if (expected instanceof Map) {
+    if (!(actual instanceof Map) || actual.size !== expected.size) return false;
+    for (const [k, v] of expected) if (!actual.has(k) || !matchesObject(actual.get(k), v, seen)) return false;
+    return true;
+  }
+  if (expected instanceof Date || expected instanceof Set || expected instanceof RegExp) return deepEqual(actual, expected);
+  return Object.entries(expected).every(([k, v]) => matchesObject((actual as Record<string, unknown>)[k], v, seen));
 }
 
 // ---------------------------------------------------------------- mocks
@@ -509,6 +516,10 @@ function makeExpect() {
     matchers.nthCalledWith = matchers.toHaveBeenNthCalledWith;
     matchers.toReturn = matchers.toHaveReturned;
     matchers.toReturnWith = matchers.toHaveReturnedWith;
+    // chai-style aliases used by some vitest suites
+    matchers.instanceOf = matchers.toBeInstanceOf;
+    matchers.match = matchers.toMatch;
+    matchers.eq = matchers.toEqual;
     for (const [name, m] of Object.entries(custom)) {
       matchers[name] = (...args) => {
         const r = m.call({ isNot: negate, equals: deepEqual }, actual, ...args) as MatcherResult;
@@ -630,7 +641,7 @@ function formatEachName(name: string, row: unknown, index: number) {
 
 class SkipSignal extends Error {}
 
-function makeTestkit(root: Suite, clock: FakeClock, hooks: { resetModules: () => void }) {
+function makeTestkit(root: Suite, clock: FakeClock, hooks: { resetModules: () => void; unstubAll: () => void; env: Record<string, string | undefined> }, stubbed: Map<string, PropertyDescriptor | undefined>) {
   const stack: Suite[] = [root];
   const cur = () => stack[stack.length - 1];
 
@@ -732,10 +743,18 @@ function makeTestkit(root: Suite, clock: FakeClock, hooks: { resetModules: () =>
       throw new Error(`vi.doMock("${id}") is not supported in this sandbox`);
     },
     unmock: () => undefined,
+    setConfig: () => undefined,
+    resetConfig: () => undefined,
     hoisted: (f: () => unknown) => f(),
-    stubGlobal: (k: string, v: unknown) => (Object.defineProperty(globalThis, k, { value: v, configurable: true, writable: true }), vi),
+    stubGlobal: (k: string, v: unknown) => {
+      if (!stubbed.has(k)) stubbed.set(k, Object.getOwnPropertyDescriptor(globalThis, k));
+      Object.defineProperty(globalThis, k, { value: v, configurable: true, writable: true });
+      return vi;
+    },
     resetModules: () => (hooks.resetModules(), vi),
-    unstubAllGlobals: () => vi,
+    unstubAllGlobals: () => (hooks.unstubAll(), vi),
+    stubEnv: (k: string, v: string | undefined) => ((hooks.env[k] = v), vi),
+    unstubAllEnvs: () => vi,
     waitFor: async (fn: () => unknown, opts?: number | { timeout?: number; interval?: number }) => {
       const timeout = typeof opts === "number" ? opts : (opts?.timeout ?? 1000);
       const interval = typeof opts === "object" ? (opts.interval ?? 20) : 20;
@@ -859,7 +878,7 @@ interface Alias {
 
 function readAliases(files: Record<string, string>): Alias {
   try {
-    return files["steercode.json"] ? (JSON.parse(files["steercode.json"]).alias ?? {}) : {};
+    return files["ngmicode.json"] ? (JSON.parse(files["ngmicode.json"]).alias ?? {}) : {};
   } catch {
     return {};
   }
@@ -894,7 +913,7 @@ export async function runTests(files: Record<string, string>, testFiles: string[
     assert: (c: unknown, ...a: unknown[]) => void (!c && pushLog("error")(...a)),
   };
   const processShim = {
-    env: { NODE_ENV: "test" } as Record<string, string>,
+    env: { NODE_ENV: "test" } as Record<string, string | undefined>,
     platform: "browser",
     version: "v20.0.0",
     versions: {},
@@ -930,7 +949,15 @@ export async function runTests(files: Record<string, string>, testFiles: string[
     const clock = new FakeClock();
     const root = newSuite("");
     const cache = new Map<string, { exports: unknown }>();
-    const kit = makeTestkit(root, clock, { resetModules: () => cache.clear() });
+    const stubbed = new Map<string, PropertyDescriptor | undefined>();
+    const unstubAll = () => {
+      for (const [k, d] of stubbed) {
+        if (d) Object.defineProperty(globalThis, k, d);
+        else delete (globalThis as Record<string, unknown>)[k];
+      }
+      stubbed.clear();
+    };
+    const kit = makeTestkit(root, clock, { resetModules: () => cache.clear(), unstubAll, env: processShim.env }, stubbed);
     const g = globalThis as Record<string, unknown>;
     const globalNames = ["describe", "it", "test", "expect", "vi", "jest", "beforeEach", "afterEach", "beforeAll", "afterAll", "suite", "expectTypeOf", "assertType"] as const;
     const savedGlobals = globalNames.map((n) => g[n]);
@@ -985,6 +1012,7 @@ export async function runTests(files: Record<string, string>, testFiles: string[
       results.push({ file: testFile, name: "(load test file)", status: "fail", error: message, durationMs: 0 });
       globalNames.forEach((n, i) => (g[n] = savedGlobals[i]));
       clock.uninstall();
+      unstubAll();
       continue;
     }
 
@@ -1071,6 +1099,7 @@ export async function runTests(files: Record<string, string>, testFiles: string[
       await runSuite(root, [], [], [], false, false);
     } finally {
       clock.uninstall();
+      unstubAll();
       globalNames.forEach((n, i) => (g[n] = savedGlobals[i]));
     }
   }

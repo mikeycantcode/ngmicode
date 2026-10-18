@@ -7,7 +7,7 @@ already stubbed in `src/render/stats.ts`:
 readingStats(root: Root, opts?: { wordsPerMinute?: number; includeCode?: boolean }): { words: number; minutes: number }
 ```
 
-Your agent is in **literal mode**: it does exactly what you say and infers nothing.
+Your instructions to the agent are graded for precision.
 Only `src/render/stats.ts` should change.
 
 ## Required behavior

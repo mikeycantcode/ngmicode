@@ -1,0 +1,12 @@
+{
+  "slug": "gh-ufo-without-host",
+  "title": "Add withoutHost",
+  "base": "gh-ufo",
+  "track": "sprint",
+  "category": "features",
+  "difficulty": "medium",
+  "timeLimit": 30,
+  "summary": "Ship a new public utility that turns any URL into a host-relative path, built on the library's own parser and documented like its siblings.",
+  "tags": ["real-world", "url-parsing", "public-api", "typescript"],
+  "source": { "pr": 212, "url": "https://github.com/unjs/ufo/pull/212", "title": "feat: add `withoutHost` utility" }
+}

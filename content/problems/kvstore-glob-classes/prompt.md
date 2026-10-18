@@ -3,7 +3,7 @@
 Ops runs `SCAN 0 MATCH session:[0-9]*` and gets nothing back. Our glob matcher
 (`src/util/glob.ts`) supports only `*` and `?`. Extend it.
 
-Your agent is in **literal mode**. Delegate precisely: say what to change,
+Your instructions to the agent are graded for precision. Delegate precisely: say what to change,
 where, and what must not change.
 
 ## Required syntax

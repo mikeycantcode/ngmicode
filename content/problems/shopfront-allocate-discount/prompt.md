@@ -5,8 +5,7 @@ a refund total) across order lines **in proportion to each line's value**, witho
 ever losing or inventing a cent. The only splitting helper today is `splitEvenly` in
 `src/shared/money.ts`, which ignores weights.
 
-Your agent is in **literal mode**. It will implement exactly what you describe — no
-more, no less. You are scored on how precisely you specify the behavior.
+Your instructions to the agent are graded for precision. You are scored on how precisely you specify the behavior.
 
 ## The ask
 

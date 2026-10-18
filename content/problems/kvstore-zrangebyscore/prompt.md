@@ -1,8 +1,8 @@
 # Spec out ZRANGEBYSCORE
 
 The leaderboard team wants to page through a sorted set by score. Their ticket
-is below, together with the excerpt from the Redis docs they pasted. Your agent
-is in **literal mode**: it implements exactly what you write and nothing more.
+is below, together with the excerpt from the Redis docs they pasted. Your
+instructions to the agent are graded for precision.
 Your job is to turn this ticket into a spec the agent cannot misread, then
 verify what it produced.
 

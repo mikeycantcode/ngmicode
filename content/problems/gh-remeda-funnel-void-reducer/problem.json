@@ -1,0 +1,22 @@
+{
+  "slug": "gh-remeda-funnel-void-reducer",
+  "title": "funnel passes a phantom argument",
+  "base": "gh-remeda",
+  "track": "review",
+  "category": "debugging",
+  "difficulty": "medium",
+  "timeLimit": 30,
+  "summary": "Without a reducer, funnel calls the executor with an empty string instead of no arguments; find why and fix it without breaking the timing logic.",
+  "tags": [
+    "real-world",
+    "remeda",
+    "debounce",
+    "timers",
+    "sentinels"
+  ],
+  "source": {
+    "pr": 1115,
+    "url": "https://github.com/remeda/remeda/pull/1115",
+    "title": "fix(sumBy,funnel,toCamelCase): fix test coverage issues"
+  }
+}

@@ -6,6 +6,6 @@
   "category": "delegation",
   "difficulty": "medium",
   "timeLimit": 30,
-  "summary": "Delegate a new rider cancellation-fee policy (late-driver waiver, waiting surcharge, surge, cap) to a literal agent without letting it guess.",
+  "summary": "Delegate a new rider cancellation-fee policy (late-driver waiver, waiting surcharge, surge, cap) precisely, without leaving room to guess.",
   "tags": ["trips", "money", "boundaries", "policy"]
 }

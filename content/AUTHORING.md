@@ -1,6 +1,6 @@
-# Authoring SteerCode problems
+# Authoring ngmicode problems
 
-SteerCode trains people for **AI-assisted coding interviews**: the candidate works in a
+ngmicode trains people for **AI-assisted coding interviews**: the candidate works in a
 VS Code-like browser IDE with a coding agent, against a realistic codebase, under a timer.
 An LLM grader then scores *how they steered the agent*, and an LLM interviewer asks follow-ups.
 Hidden tests are deliberately **few** (1–4 cases per problem) — they check the key behavior,
@@ -118,7 +118,7 @@ tests, and the snapshot itself is the reference solution.
 - Copy only what a candidate needs: the library's source, its tests, `README.md`, and the
   `LICENSE` file (mandatory). Drop docs sites, benchmarks, examples, CI config, lockfiles, build
   scripts, and anything that cannot run in the sandbox.
-- Add `steercode.json` at the base root:
+- Add `ngmicode.json` at the base root:
   ```json
   {
     "source": { "repo": "honojs/hono", "commit": "<full sha>", "license": "MIT", "url": "https://github.com/honojs/hono" },

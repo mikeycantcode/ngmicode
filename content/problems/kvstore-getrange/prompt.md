@@ -3,8 +3,7 @@
 A client library we embed `kvstore` behind calls `GETRANGE` and fails with
 `ERR unknown command 'GETRANGE'`. Add the command.
 
-Your agent is in **literal mode**: it does exactly what you tell it and fills in
-no gaps on its own. You are scored on how precisely you specify the behavior.
+Your instructions to the agent are graded for precision. You are scored on how precisely you specify the behavior.
 
 ## The command
 

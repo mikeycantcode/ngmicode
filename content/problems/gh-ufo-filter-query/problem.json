@@ -1,0 +1,12 @@
+{
+  "slug": "gh-ufo-filter-query",
+  "title": "Add filterQuery",
+  "base": "gh-ufo",
+  "track": "precision",
+  "category": "specs",
+  "difficulty": "easy",
+  "timeLimit": 20,
+  "summary": "Add a filterQuery(input, predicate) utility that keeps only the query params a predicate accepts. Your instructions are graded for precision: spell out every edge case.",
+  "tags": ["real-world", "query-string", "api-design", "typescript"],
+  "source": { "pr": 287, "url": "https://github.com/unjs/ufo/pull/287", "title": "feat: add `filterQuery` utility" }
+}

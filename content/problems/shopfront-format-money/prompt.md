@@ -5,8 +5,7 @@ Finance is moving the refund and invoice emails onto `formatCents` in
 thousands separators, prints negative amounts as `$-12.50`, and goes through
 floating point.
 
-Your agent is in **literal mode**: it does exactly what you tell it and infers
-nothing. Your job is to specify the behavior precisely enough that it gets it right
+Your instructions to the agent are graded for precision. Your job is to specify the behavior precisely enough that it gets it right
 the first time.
 
 ## The ask

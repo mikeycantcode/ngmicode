@@ -6,6 +6,6 @@
   "category": "fundamentals",
   "difficulty": "easy",
   "timeLimit": 15,
-  "summary": "Replace a too-permissive channel-name normalizer with exact product rules, steering a literal-minded agent.",
+  "summary": "Replace a too-permissive channel-name normalizer with exact product rules, with instructions graded for precision.",
   "tags": ["strings", "validation", "spec"]
 }

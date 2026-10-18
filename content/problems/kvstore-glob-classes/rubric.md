@@ -17,7 +17,7 @@
 - `src/commands/keys.ts`, `src/scan/cursor.ts`, `src/config.ts`: callers of `globMatch`.
 
 ## Traps
-- **The duplicate matcher.** A literal agent told "edit `glob.ts`" leaves PSUBSCRIBE on the old
+- **The duplicate matcher.** A spec that only says "edit `glob.ts`" leaves PSUBSCRIBE on the old
   matcher. Hidden test 3 subscribes with `news.[a-c]*`.
 - **Regex translation.** Converting the glob to a `RegExp` without escaping breaks keys with
   `.`, `+` or `(`. It also violates the constraint. Hidden test 2.

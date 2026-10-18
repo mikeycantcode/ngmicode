@@ -15,7 +15,7 @@ agent does not invent a second registration.
 
 ## Traps
 - **Reusing `normalizeRange`.** It implements LRANGE semantics, so `0 -100` gives `""` instead
-  of `"H"`. A literal agent told to "reuse the range helper" falls straight into this.
+  of `"H"`. A spec that says "reuse the range helper" leads the agent straight into this.
 - **Wrong flags.** Copying `APPEND`'s spec (`write`, `denyoom`) makes GETRANGE WAL-logged,
   which hidden test 3 catches.
 - **Reading via `ctx.ks.peek`** or another stats-free path means hits and misses are not counted.

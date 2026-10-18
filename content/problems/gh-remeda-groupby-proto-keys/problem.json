@@ -1,0 +1,21 @@
+{
+  "slug": "gh-remeda-groupby-proto-keys",
+  "title": "groupBy crashes on the key \"toString\"",
+  "base": "gh-remeda",
+  "track": "weak",
+  "category": "debugging",
+  "difficulty": "medium",
+  "timeLimit": 30,
+  "summary": "Grouping or counting by values like \"toString\" or \"valueOf\" crashes or returns garbage; fix every affected function with a weak agent.",
+  "tags": [
+    "real-world",
+    "remeda",
+    "prototypes",
+    "objects-as-maps"
+  ],
+  "source": {
+    "pr": 1049,
+    "url": "https://github.com/remeda/remeda/pull/1049",
+    "title": "fix: Handling of strings that are `Object` instance method names (in`groupBy` and `countBy`)"
+  }
+}

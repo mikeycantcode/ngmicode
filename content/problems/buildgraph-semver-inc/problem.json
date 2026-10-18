@@ -6,6 +6,6 @@
   "category": "fundamentals",
   "difficulty": "easy",
   "timeLimit": 20,
-  "summary": "Add a version-bump function whose prerelease rules a literal agent will only get right if you spell them out.",
+  "summary": "Add a version-bump function whose prerelease rules you must spell out precisely.",
   "tags": ["semver", "spec", "prerelease"]
 }

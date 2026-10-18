@@ -1,0 +1,21 @@
+{
+  "slug": "gh-zod-union-check-only",
+  "title": "Union error regression",
+  "base": "gh-zod",
+  "track": "review",
+  "category": "debugging",
+  "difficulty": "hard",
+  "timeLimit": 45,
+  "summary": "A patch release made a union report a generic invalid_union where it used to report the array's too_big. Find the root cause and restore the specific error.",
+  "tags": [
+    "real-world",
+    "zod",
+    "regression",
+    "errors"
+  ],
+  "source": {
+    "pr": 6662,
+    "url": "https://github.com/colinhacks/zod/pull/6662",
+    "title": "fix(v4): report a union option that only checks rejected"
+  }
+}

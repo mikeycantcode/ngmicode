@@ -4,7 +4,7 @@ Surge pricing in a zone flaps between recomputes, because the current curve has 
 Riders see 1.0x, then 2.5x, then 1.25x within three minutes. Pricing has written a new curve.
 Implement it exactly.
 
-**Your agent runs in literal mode.** It does exactly what you say and infers nothing.
+**Your instructions to the agent are graded for precision.** Specify every rule; do not leave it to infer.
 
 ## Scope
 

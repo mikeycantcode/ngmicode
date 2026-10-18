@@ -1,5 +1,5 @@
 ## Intended approach
-A precise spec dictated to a literal agent. One canonical way to compute it: `((((lng + 180) % 360) + 360) % 360) - 180`, then map `-0` to `0`. `lngDelta = normalizeLng(to - from)` after validating both inputs. A strong candidate states the formula or the invariants (range, boundary, -0, error message), then asks the agent for a few spot checks. Examples: 180, -180, 540, -360, and 179 → -179.
+A precise spec dictated to the agent. One canonical way to compute it: `((((lng + 180) % 360) + 360) % 360) - 180`, then map `-0` to `0`. `lngDelta = normalizeLng(to - from)` after validating both inputs. A strong candidate states the formula or the invariants (range, boundary, -0, error message), then asks the agent for a few spot checks. Examples: 180, -180, 540, -360, and 179 → -179.
 
 ## Key files
 - `src/geo/latlng.ts` (add `normalizeLng`, `lngDelta`)
@@ -9,7 +9,7 @@ A precise spec dictated to a literal agent. One canonical way to compute it: `((
 - Boundary: 180 must map to -180 (half-open range). Many implementations return 180.
 - `-0`: `normalizeLng(-360)`, `normalizeLng(-0)` and `lngDelta(x, x)` can yield `-0`. `toBe(0)` uses Object.is, so tests catch it.
 - Error message format must be exact (`invalid longitude: NaN`), and `lngDelta` validates `from` before `to`.
-- A literal agent will NOT add validation, `-0` handling or wrap logic unless told.
+- Penalize a spec that leaves validation, `-0` handling or wrap logic unspecified, even if the result happens to be correct.
 
 ## Strong signals
 - Gives the agent the target range and the boundary rule explicitly, plus the `-0` rule and the exact error text.

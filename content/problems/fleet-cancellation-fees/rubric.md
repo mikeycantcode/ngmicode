@@ -8,7 +8,7 @@ Decompose the policy into ordered rules and give each boundary explicitly: inclu
 
 ## Traps
 - **Cap before vs after surge:** capping at 1500 and then surging gives 2250. The spec says surge first, then cap.
-- **Boundaries:** free window is `<=`, late threshold is strict `>`. Literal agents copy whichever comparison you say.
+- **Boundaries:** free window is `<=`, late threshold is strict `>`. Penalize a spec that leaves either comparison unspecified, even if the result happens to be correct.
 - **pickupEtaSec null** must not waive the fee (`null * 1000 = 0` would make every trip "late" after 5 min).
 - **Full minutes:** use floor of `(waited − 2 min) / 1 min`, clamped at 0. Not ceil, not round.
 - **Rounding:** surge with odd bps (12 345) must round half-up via the money helpers, not truncate.

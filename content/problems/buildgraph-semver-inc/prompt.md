@@ -1,8 +1,8 @@
 # Version bumping: `inc()`
 
 We're adding a `buildgraph version <bump>` command. Before we build the command, we need
-the core function. Your agent is in **literal mode**: it does exactly what you tell it and
-infers nothing. Your score depends on how precisely you specify the behavior.
+the core function. Your instructions to the agent are graded
+for precision. Your score depends on how precisely you specify the behavior.
 
 ## The ask
 

@@ -1,0 +1,17 @@
+{
+  "slug": "gh-hono-mount-middleware",
+  "title": "Move app.mount() into a Mount middleware",
+  "base": "gh-hono",
+  "track": "sprint",
+  "category": "integration",
+  "difficulty": "hard",
+  "timeLimit": 60,
+  "summary": "Extract the framework-bridging logic of app.mount() into a standalone mount() middleware that works with app.all(), app.use() and basePath().",
+  "tags": ["real-world", "middleware", "routing", "api-migration"],
+  "remove": ["src/middleware/mount/index.ts", "src/middleware/mount/index.test.ts"],
+  "source": {
+    "pr": 5221,
+    "url": "https://github.com/honojs/hono/pull/5221",
+    "title": "feat(mount): introduce Mount Middleware and deprecate `app.mount`"
+  }
+}

@@ -5,7 +5,7 @@ Today the only helper is the deprecated `fromDecimal(value: number, …)` in
 `src/domain/money.ts`. It multiplies a float, so `"1.005"` style inputs round
 wrong, and it can't reject bad input.
 
-Your agent is in **literal mode**: it does exactly what you say and infers nothing.
+Your instructions to the agent are graded for precision: spell out every edge case.
 
 ## The ask
 

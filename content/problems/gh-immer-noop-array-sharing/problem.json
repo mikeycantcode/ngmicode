@@ -1,0 +1,12 @@
+{
+  "slug": "gh-immer-noop-array-sharing",
+  "title": "No-op array calls break structural sharing",
+  "base": "gh-immer",
+  "track": "review",
+  "category": "performance",
+  "difficulty": "hard",
+  "timeLimit": 60,
+  "summary": "With the array-methods plugin, push(...[]) and splice(i, 0) return a brand-new state and invalidate every memoized selector downstream.",
+  "tags": ["real-world", "immer", "structural-sharing", "memoization", "proxies"],
+  "source": { "pr": 1289, "url": "https://github.com/immerjs/immer/pull/1289", "title": "fix: preserve structural sharing for no-op array-methods calls" }
+}

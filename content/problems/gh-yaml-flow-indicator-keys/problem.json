@@ -1,0 +1,21 @@
+{
+  "slug": "gh-yaml-flow-indicator-keys",
+  "title": "Over-quoted keys like /models/{id}",
+  "base": "gh-yaml",
+  "track": "weak",
+  "category": "testing",
+  "difficulty": "medium",
+  "timeLimit": 30,
+  "summary": "Round-tripping an OpenAPI file quotes keys such as /models/{model}. Stop quoting where YAML allows it, and prove with tests that flow context still quotes.",
+  "tags": [
+    "real-world",
+    "yaml",
+    "stringify",
+    "spec-compliance"
+  ],
+  "source": {
+    "pr": 494,
+    "url": "https://github.com/eemeli/yaml/pull/494",
+    "title": "Do not require quotes for implicit keys with flow indicators"
+  }
+}

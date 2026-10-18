@@ -6,6 +6,6 @@
   "category": "fundamentals",
   "difficulty": "easy",
   "timeLimit": 20,
-  "summary": "Add the GETRANGE string command to a Redis-style engine with a literal-minded agent; every index rule must be spelled out.",
+  "summary": "Add the GETRANGE string command to a Redis-style engine; every index rule must be spelled out precisely.",
   "tags": ["strings", "commands", "boundaries"]
 }

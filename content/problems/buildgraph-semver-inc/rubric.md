@@ -1,5 +1,5 @@
 ## Intended approach
-Candidate gives the literal agent a full spec: signature, file location, reuse of `parseStrict` / `format`
+Candidate gives the agent a full spec: signature, file location, reuse of `parseStrict` / `format`
 (which already strips `v` and build metadata and throws the exact `Invalid version` message), and each
 release rule written as a rule rather than as a pile of examples:
 - major: prerelease AND minor==0 AND patch==0 -> drop prerelease; else major+1, minor=patch=0, drop prerelease.
@@ -18,7 +18,7 @@ They then check the agent's output against the table, ideally by having it write
 - "Right-most numeric identifier" vs. "last identifier": `beta.2.hotfix` -> `beta.3.hotfix`, not `beta.2.hotfix.0`.
 - Major/minor on a prerelease that is already the "target" release (`2.0.0-rc.1` major -> `2.0.0`).
 - preid that differs from the current one resets to `<preid>.0` without bumping patch.
-- Mutating the parsed object's `prerelease` array in place (literal agent will do this if told "push 0").
+- Mutating the parsed object's `prerelease` array in place (a spec that says "push 0" invites this).
 - Numeric identifiers are numbers in `SemVer.prerelease`. String concatenation (`"9" + 1`) gives `91`.
 - Error message format for the release type is stated once in the brief.
 

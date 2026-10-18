@@ -1,7 +1,7 @@
 ## Intended approach
 
 1. Add both options to `JobOptions` **and** `NormalizedJobOptions`, and carry them through
-   `normalizeJobOptions`. A literal agent adds them to the input type and forgets the normalized
+   `normalizeJobOptions`. A vague spec lets the agent add them to the input type and forget the normalized
    output, so `job.opts.removeOnComplete` is always undefined.
 2. Validate the merged values with the exact message.
 3. Add a small retention helper (e.g. `src/queue/retention.ts`, `applyRetention(ctx, job, policy)`)

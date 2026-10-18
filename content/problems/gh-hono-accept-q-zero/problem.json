@@ -1,0 +1,16 @@
+{
+  "slug": "gh-hono-accept-q-zero",
+  "title": "Honor q=0 in content negotiation",
+  "base": "gh-hono",
+  "track": "weak",
+  "category": "debugging",
+  "difficulty": "easy",
+  "timeLimit": 30,
+  "summary": "Clients that say q=0 still get the media type or language they rejected. Fix both negotiation paths without changing the parsers.",
+  "tags": ["real-world", "http-semantics", "content-negotiation"],
+  "source": {
+    "pr": 5311,
+    "url": "https://github.com/honojs/hono/pull/5311",
+    "title": "fix(accepts, language): skip accept entries with quality 0 when matching"
+  }
+}

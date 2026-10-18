@@ -1,0 +1,21 @@
+{
+  "slug": "gh-superstruct-array-as-object",
+  "title": "Arrays pass as objects",
+  "base": "gh-superstruct",
+  "track": "weak",
+  "category": "debugging",
+  "difficulty": "medium",
+  "timeLimit": 30,
+  "summary": "An empty array sails through object(), type() and record() validation. Steer a forgetful agent to fix every object-like struct, not just the first one.",
+  "tags": ["real-world", "validation", "typescript"],
+  "remove": [
+    "test/validation/object/invalid-array.ts",
+    "test/validation/record/invalid-array.ts",
+    "test/validation/type/invalid-array.ts"
+  ],
+  "source": {
+    "pr": 1252,
+    "url": "https://github.com/ianstormtaylor/superstruct/pull/1252",
+    "title": "Fix incorrectly passing validation for arrays in object(), type(), and record()"
+  }
+}

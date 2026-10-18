@@ -8,8 +8,8 @@ message. They come from `renderPreview(text, ctx, maxLen)` in
 - Unknown users and channels render as raw ids (`@u_000042`).
 - Truncation cuts words in half and can split an emoji.
 
-Rewrite `renderPreview` to the spec below. Your agent is in **literal mode**.
-It implements exactly what you tell it. You're scored on how precisely you
+Rewrite `renderPreview` to the spec below. Your instructions to the agent are graded
+for precision. You're scored on how precisely you
 specify the behavior.
 
 ## Input

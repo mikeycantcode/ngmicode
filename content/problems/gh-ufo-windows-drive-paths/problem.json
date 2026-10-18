@@ -1,0 +1,12 @@
+{
+  "slug": "gh-ufo-windows-drive-paths",
+  "title": "Paths with a colon lose their leading slash",
+  "base": "gh-ufo",
+  "track": "weak",
+  "category": "debugging",
+  "difficulty": "medium",
+  "timeLimit": 30,
+  "summary": "Some https URLs come out of the parser with a broken pathname. Reproduce it, find the root cause, and fix it without breaking Windows file URLs.",
+  "tags": ["real-world", "url-parsing", "regression", "typescript"],
+  "source": { "pr": 246, "url": "https://github.com/unjs/ufo/pull/246", "title": "fix(parseURL): only normalize windows drive letters with `file://` protocol" }
+}

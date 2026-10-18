@@ -1,0 +1,4 @@
+{
+  "source": { "repo": "remeda/remeda", "commit": "e83bb3a00f07846720e1d4a2668f170de9714aac", "license": "MIT", "url": "https://github.com/remeda/remeda" },
+  "alias": { "remeda": "src" }
+}

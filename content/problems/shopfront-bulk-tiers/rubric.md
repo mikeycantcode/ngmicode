@@ -6,7 +6,7 @@ quantities per `productId` over non-excluded lines; second pass for each non-exc
 finds the tier for its product's total and calls `discountLine(state, line,
 Math.floor(lineNet(line) * pct / 100), { id, label: `${label} (${pct}% off)` })`.
 
-The skill being tested is *delegation to a literal agent*: the candidate should give
+The skill being tested is *precise delegation*: the candidate should give
 an unambiguous, ordered spec (ideally pseudo-code), name the existing helpers (`discountLine`,
 `lineNet`), and explicitly forbid `percentOf` (it rounds half-up).
 
@@ -30,7 +30,7 @@ an unambiguous, ordered spec (ideally pseudo-code), name the existing helpers (`
 - Writes the spec as numbered steps or pseudo-code before the agent edits anything.
 - Explicitly names `discountLine` and `lineNet` and says *not* to use `percentOf`.
 - Asks the agent to add tests for: cross-variant aggregation, floor rounding after a category promotion, exclusion tag, each validation message.
-- Re-reads the diff for unintended changes (literal agent should touch one file).
+- Re-reads the diff for unintended changes (the agent should touch one file).
 
 ## Weak signals
 - "Update tiers to count per product and round down" — then fixing agent output piecemeal.

@@ -38,14 +38,20 @@ function IdeMock() {
             <span className="text-ctp-green">✓ 14 passed</span> <span className="text-ctp-red">✗ 1 failed</span> — refunds › emits ledger event
           </div>
         </div>
-        <div className="border-l bg-ctp-mantle p-2">
-          <div className="text-[10px] uppercase tracking-wider text-ctp-overlay1">Agent</div>
-          <div className="mt-1 rounded bg-ctp-surface0 p-1.5 text-ctp-text">Refunds must post a reversal journal entry and emit <span className="text-ctp-pink">payment.refunded</span>. Reuse postEntry().</div>
-          <div className="mt-1.5 p-1.5 text-muted-foreground">
-            <span className="text-ctp-teal">read_file</span> src/ledger/post.ts
-            <br />
-            <span className="text-ctp-peach">edit_file</span> refunds.ts
+        <div className="dark border-l border-white/10 bg-black p-2 text-ctp-text">
+          <div className="text-[10px] text-ctp-overlay1">agent — DeepSeek V4.1 Flash</div>
+          <div className="mt-1.5 text-ctp-subtext0">
+            <span className="text-ctp-overlay1">&gt;</span> refunds must post a reversal entry and emit <span className="text-ctp-mauve">payment.refunded</span>. reuse postEntry()
           </div>
+          <div className="mt-1.5">
+            <span className="text-ctp-green">⏺</span> <span className="font-semibold">Read</span>(src/ledger/post.ts)
+          </div>
+          <div className="pl-1 text-ctp-overlay1">⎿ Read 84 lines</div>
+          <div>
+            <span className="text-ctp-green">⏺</span> <span className="font-semibold">Update</span>(refunds.ts)
+          </div>
+          <div className="pl-1 text-ctp-overlay1">⎿ 3 additions, 1 removal</div>
+          <div className="mt-1 text-ctp-peach">✻ Thinking…</div>
         </div>
       </div>
     </div>
@@ -74,7 +80,7 @@ export default function Home() {
               <span className="bg-gradient-to-r from-ctp-mauve via-ctp-pink to-ctp-blue bg-clip-text text-transparent">Practice the new one.</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg text-muted-foreground">
-              Steer a real coding agent through unfamiliar codebases on a clock. Write specs precise enough for a literal-minded model. Rescue a weak one. Then defend your work to an AI interviewer.
+              Steer a real coding agent through unfamiliar codebases on a clock. Write specs precise enough to leave nothing to guess. Rescue a weak one. Then defend your work to an AI interviewer.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button size="lg" className="h-10 px-4" render={<Link href="/signup" />}>

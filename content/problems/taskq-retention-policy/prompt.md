@@ -6,7 +6,7 @@ A high-volume queue keeps every completed job record forever, and the
 in-memory store reaches 2 GB by Friday. Today we run `admin.clean` from cron.
 We want per-job retention options, BullMQ style.
 
-Your agent is in **literal mode**: it does exactly what you say. You are
+Your instructions to the agent are graded for precision. You are
 delegating a change that touches option types, validation and the worker's
 completion and failure paths. It should land with no surprises. You may (and
 should) tell it exactly where things go. Relevant places:

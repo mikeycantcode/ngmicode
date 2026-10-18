@@ -4,7 +4,7 @@ Our READMEs are rendered both by GitHub and by mdkit. Deep links copied from Git
 (`#größe--gewicht`) don't work on our docs site. Our `slugify` is ASCII-only and
 collapses dashes, and GitHub's does neither.
 
-Your agent is in **literal mode**: it does exactly what you say and infers nothing.
+Your instructions to the agent are graded for precision: specify every step, not just the goal.
 
 ## The ask
 

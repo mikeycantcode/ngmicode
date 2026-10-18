@@ -6,6 +6,6 @@
   "category": "specs",
   "difficulty": "medium",
   "timeLimit": 30,
-  "summary": "Specify a largest-remainder allocation function exactly enough that a literal agent gets rounding, ties, negatives and overflow right.",
+  "summary": "Specify a largest-remainder allocation function exactly: rounding, ties, negatives and overflow.",
   "tags": ["money", "rounding", "spec"]
 }

@@ -1,0 +1,13 @@
+{
+  "slug": "gh-valibot-ksuid",
+  "title": "Add a ksuid() validation action",
+  "base": "gh-valibot",
+  "track": "precision",
+  "category": "specs",
+  "difficulty": "medium",
+  "timeLimit": 30,
+  "summary": "Add a KSUID string validator to valibot that matches the library's action conventions exactly: object shape, regex export, issue label and package export.",
+  "tags": ["real-world", "validation", "regex", "api-conventions"],
+  "remove": ["src/actions/ksuid/index.ts", "src/actions/ksuid/ksuid.ts", "src/actions/ksuid/ksuid.test.ts"],
+  "source": { "pr": 1370, "url": "https://github.com/open-circle/valibot/pull/1370", "title": "feat: add support for KSUID" }
+}

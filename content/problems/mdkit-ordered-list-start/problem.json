@@ -6,6 +6,6 @@
   "category": "delegation",
   "difficulty": "easy",
   "timeLimit": 20,
-  "summary": "The parser records `start` but both renderers ignore it. Delegate a two-file change so the literal agent gets every boundary right.",
+  "summary": "The parser records `start` but both renderers ignore it. Delegate a two-file change and specify every boundary precisely.",
   "tags": ["lists", "renderers", "delegation"]
 }

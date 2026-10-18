@@ -6,6 +6,6 @@
   "category": "fundamentals",
   "difficulty": "easy",
   "timeLimit": 15,
-  "summary": "Replace a float-based money parser with an exact string parser whose every edge case you must spell out to a literal agent.",
+  "summary": "Replace a float-based money parser with an exact string parser whose every edge case you must spell out precisely.",
   "tags": ["money", "parsing", "validation"]
 }

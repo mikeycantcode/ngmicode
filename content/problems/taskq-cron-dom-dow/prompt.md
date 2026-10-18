@@ -10,8 +10,7 @@ Two kinds of entry behave differently here than they did on the old hosts:
 - `0 9 * * 7`, `0 0 1 JAN *` and `0 9 * * MON-FRI` are rejected as parse errors.
 
 The parser lives in `src/scheduler/cron.ts` (`parseCron`, `nextRun`). Your
-agent is in **literal mode**: it implements exactly what you say and nothing
-more. Your job is to specify the change precisely.
+instructions to the agent are graded for precision. Your job is to specify the change precisely.
 
 ## Required behaviour
 

@@ -1,0 +1,16 @@
+{
+  "slug": "gh-hono-wildcard-overmatch",
+  "title": "Wildcard routes match too much",
+  "base": "gh-hono",
+  "track": "review",
+  "category": "debugging",
+  "difficulty": "medium",
+  "timeLimit": 45,
+  "summary": "Two of Hono's routers let /path/* match /pathfoo and /assets* match /asset. Find every router with the bug and fix it without breaking the others.",
+  "tags": ["real-world", "routing", "regex", "consistency"],
+  "source": {
+    "pr": 5252,
+    "url": "https://github.com/honojs/hono/pull/5252",
+    "title": "fix(pattern-router/linear-router): prevent prefix overmatch on wildcard routes"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "gh-remeda-range-step",
+  "title": "range() with a step",
+  "base": "gh-remeda",
+  "track": "precision",
+  "category": "specs",
+  "difficulty": "hard",
+  "timeLimit": 60,
+  "summary": "Add a step option to remeda's range, with exact rules for direction, zero steps, floating-point length and -0.",
+  "tags": [
+    "real-world",
+    "remeda",
+    "floating-point",
+    "api-design"
+  ],
+  "source": {
+    "pr": 1257,
+    "url": "https://github.com/remeda/remeda/pull/1257",
+    "title": "fix(range): add step parameter to range function"
+  }
+}

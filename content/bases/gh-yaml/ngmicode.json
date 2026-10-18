@@ -1,0 +1,4 @@
+{
+  "source": { "repo": "eemeli/yaml", "commit": "528ef30d6ded4bd9f2c3521b670eb2b29d503c5c", "license": "ISC", "url": "https://github.com/eemeli/yaml" },
+  "alias": { "yaml/util": "src/util.ts", "yaml/cli": "src/cli.ts", "yaml": "src/index.ts" }
+}

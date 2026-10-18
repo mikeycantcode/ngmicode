@@ -77,7 +77,7 @@ function ProblemView({ p }: { p: WorkspaceProblem }) {
         </a>
       )}
       <div className="prose-ctp">
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>{p.prompt}</ReactMarkdown>
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>{p.prompt.replace(/^\s*#\s+[^\n]*\n+/, "")}</ReactMarkdown>
       </div>
       <div className="mt-6 rounded-lg border bg-ctp-crust/40 p-3 text-xs text-muted-foreground">
         <div className="mb-1 font-medium text-foreground">{TRACKS[p.track].name} round</div>
@@ -390,7 +390,7 @@ export function Workspace({ problem: p, mode, modelLabel }: { problem: Workspace
           </ResizablePanel>
           <ResizableHandle />
           <ResizablePanel defaultSize="30%" minSize="20%" maxSize="50%">
-            <AgentPanel modelLabel={modelLabel} />
+            <AgentPanel modelLabel={modelLabel} track={p.track} />
           </ResizablePanel>
         </ResizablePanelGroup>
       </div>

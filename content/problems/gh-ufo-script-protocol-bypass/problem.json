@@ -1,0 +1,12 @@
+{
+  "slug": "gh-ufo-script-protocol-bypass",
+  "title": "javascript: URLs slip past the sanitizer",
+  "base": "gh-ufo",
+  "track": "review",
+  "category": "security",
+  "difficulty": "hard",
+  "timeLimit": 45,
+  "summary": "A researcher reports that a link sanitizer built on ufo lets javascript: URLs through. Audit how the library detects protocols, close every bypass, and prove it.",
+  "tags": ["real-world", "xss", "url-parsing", "whatwg-url", "typescript"],
+  "source": { "pr": 170, "url": "https://github.com/unjs/ufo/pull/170", "title": "fix(parseURL, hasProtocol, isScriptProtocol): ignore leading whitespaces" }
+}

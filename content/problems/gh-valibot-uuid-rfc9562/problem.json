@@ -1,0 +1,12 @@
+{
+  "slug": "gh-valibot-uuid-rfc9562",
+  "title": "Make uuid() follow RFC 9562",
+  "base": "gh-valibot",
+  "track": "precision",
+  "category": "fundamentals",
+  "difficulty": "easy",
+  "timeLimit": 20,
+  "summary": "Tighten valibot's UUID regex to check the version and variant nibbles while keeping the Nil and Max UUIDs valid.",
+  "tags": ["real-world", "regex", "validation", "uuid"],
+  "source": { "pr": 1643, "url": "https://github.com/open-circle/valibot/pull/1643", "title": "fix(uuid): check version and variant per RFC 9562" }
+}

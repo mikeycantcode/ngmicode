@@ -1,0 +1,86 @@
+import { SKIP_ITEM } from "./internal/lazyControl";
+import { purryWithLazy } from "./internal/purryWithLazy";
+import { requireData } from "./internal/requireData";
+import type { Deduped } from "./internal/types/Deduped";
+import type { IterableContainer } from "./internal/types/IterableContainer";
+import type { LazyEvaluator } from "./internal/types/LazyEvaluator";
+
+type IsEquals<T> = (a: T, b: T) => boolean;
+
+/**
+ * Returns a new array containing only one copy of each element in the original
+ * list. Elements are compared by custom comparator isEquals.
+ *
+ * @param data - The array to filter.
+ * @param isEquals - The comparator.
+ * @signature
+ *    uniqueWith(array, isEquals)
+ * @example
+ *    uniqueWith(
+ *      [{a: 1}, {a: 2}, {a: 2}, {a: 5}, {a: 1}, {a: 6}, {a: 7}],
+ *      equals,
+ *    ) // => [{a: 1}, {a: 2}, {a: 5}, {a: 6}, {a: 7}]
+ * @dataFirst
+ * @lazy
+ * @category Array
+ */
+export function uniqueWith<T extends IterableContainer>(
+  data: T,
+  isEquals: IsEquals<T[number]>,
+): Deduped<T>;
+
+/**
+ * Returns a new array containing only one copy of each element in the original
+ * list. Elements are compared by custom comparator isEquals.
+ *
+ * @param isEquals - The comparator.
+ * @signature uniqueWith(isEquals)(array)
+ * @example
+ *    uniqueWith(equals)(
+ *      [{a: 1}, {a: 2}, {a: 2}, {a: 5}, {a: 1}, {a: 6}, {a: 7}],
+ *    ) // => [{a: 1}, {a: 2}, {a: 5}, {a: 6}, {a: 7}]
+ *    pipe(
+ *      [{a: 1}, {a: 2}, {a: 2}, {a: 5}, {a: 1}, {a: 6}, {a: 7}], // only 4 iterations
+ *      uniqueWith(equals),
+ *      take(3)
+ *    ) // => [{a: 1}, {a: 2}, {a: 5}]
+ * @dataLast
+ * @lazy
+ * @category Array
+ */
+export function uniqueWith<T extends IterableContainer>(
+  isEquals: IsEquals<T[number]>,
+): (data: T) => Deduped<T>;
+
+export function uniqueWith(...args: readonly unknown[]): unknown {
+  return purryWithLazy(uniqueWithImplementation, args, lazyImplementation);
+}
+
+function uniqueWithImplementation<T>(
+  data: readonly T[],
+  isEquals: IsEquals<T>,
+): T[] {
+  const result: T[] = [];
+  for (const [index, value] of data.entries()) {
+    if (
+      data.findIndex(
+        (otherValue, otherIndex) =>
+          index === otherIndex || isEquals(value, otherValue),
+      ) === index
+    ) {
+      result.push(value);
+    }
+  }
+
+  return result;
+}
+
+const lazyImplementation = <T>(isEquals: IsEquals<T>): LazyEvaluator<T> =>
+  requireData((value, index, data) =>
+    data.findIndex(
+      (otherValue, otherIndex) =>
+        index === otherIndex || isEquals(value, otherValue),
+    ) === index
+      ? value
+      : SKIP_ITEM,
+  );

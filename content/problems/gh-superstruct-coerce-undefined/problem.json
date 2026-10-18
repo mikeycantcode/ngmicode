@@ -1,0 +1,16 @@
+{
+  "slug": "gh-superstruct-coerce-undefined",
+  "title": "Coercing a field to undefined",
+  "base": "gh-superstruct",
+  "track": "precision",
+  "category": "specs",
+  "difficulty": "easy",
+  "timeLimit": 20,
+  "summary": "A coercion that returns undefined is silently ignored, so null leaks through create(). Specify the exact write-back rule precisely.",
+  "tags": ["real-world", "coercion", "regression"],
+  "source": {
+    "pr": 1126,
+    "url": "https://github.com/ianstormtaylor/superstruct/pull/1126",
+    "title": "Allow coercions to undefined"
+  }
+}

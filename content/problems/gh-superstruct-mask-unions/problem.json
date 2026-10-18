@@ -1,0 +1,16 @@
+{
+  "slug": "gh-superstruct-mask-unions",
+  "title": "mask() breaks inside union()",
+  "base": "gh-superstruct",
+  "track": "review",
+  "category": "comprehension",
+  "difficulty": "hard",
+  "timeLimit": 60,
+  "summary": "mask() strips unknown keys from objects, unless the object sits inside a union. Understand how masking threads through the validation engine and make it compose.",
+  "tags": ["real-world", "recursion", "validation", "api-design"],
+  "source": {
+    "pr": 1251,
+    "url": "https://github.com/ianstormtaylor/superstruct/pull/1251",
+    "title": "Fix masking within unions"
+  }
+}

@@ -6,7 +6,7 @@ export interface Track {
   name: string;
   short: string;
   description: string;
-  agent: "strong" | "weak" | "literal";
+  agent: "strong" | "weak";
   /** Accent color token (catppuccin name) */
   color: string;
 }
@@ -35,8 +35,8 @@ export const TRACKS: Record<TrackId, Track> = {
     name: "Precision Spec",
     short: "Precision",
     description:
-      "A strong agent in literal mode on a small task. It does exactly what you say and nothing else. Scored on how precisely you specify and narrate your intent.",
-    agent: "literal",
+      "A small, sharply scoped task with a strong agent. Scored on how precisely you specify behavior: names, edge cases, ordering, errors.",
+    agent: "strong",
     color: "teal",
   },
   review: {

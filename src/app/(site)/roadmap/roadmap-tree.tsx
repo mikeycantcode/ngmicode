@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CheckCircle2, Circle, CircleDot } from "lucide-react";
 import type { ProblemMeta } from "@/lib/content-types";
 import { CATEGORIES, CATEGORY_BY_ID, type TrackId } from "@/lib/taxonomy";
@@ -29,6 +29,8 @@ const POS: Record<string, [number, number]> = {
 const COLS = 4;
 const ROWS = 6;
 const ROW_H = 120;
+const NODE_W = 200;
+const NODE_H = 64;
 
 interface Progress {
   solved: boolean;
@@ -37,8 +39,19 @@ interface Progress {
 
 export function RoadmapTree({ problems, progress }: { problems: ProblemMeta[]; progress: Record<string, Progress> }) {
   const [open, setOpen] = useState<string | null>(null);
+  const box = useRef<HTMLDivElement>(null);
+  const [width, setWidth] = useState(1000);
+  useEffect(() => {
+    const el = box.current;
+    if (!el) return;
+    const ro = new ResizeObserver(([e]) => setWidth(e.contentRect.width));
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
   const byCat = (id: string) => problems.filter((p) => p.category === id);
-  const pct = (x: number) => `${10 + (x / COLS) * 80}%`;
+  const margin = NODE_W / 2 + 24;
+  const xOf = (x: number) => margin + (x / COLS) * Math.max(0, width - 2 * margin);
+  const yOf = (y: number) => 20 + y * ROW_H + ROW_H / 2;
   const height = ROWS * ROW_H;
 
   const edges = CATEGORIES.flatMap((c) => c.parents.map((p) => [p, c.id] as const));
@@ -47,16 +60,16 @@ export function RoadmapTree({ problems, progress }: { problems: ProblemMeta[]; p
   return (
     <>
       {/* Desktop tree */}
-      <div className="relative mt-8 hidden overflow-hidden rounded-xl border bg-ctp-mantle/40 md:block" style={{ height: height + 40 }}>
+      <div ref={box} className="relative mt-8 hidden overflow-hidden rounded-xl border bg-ctp-mantle/40 md:block" style={{ height: height + 40 }}>
         <div className="bg-grid absolute inset-0 opacity-60" />
-        <svg className="absolute inset-0 h-full w-full" preserveAspectRatio="none" viewBox={`0 0 1000 ${height + 40}`}>
+        <svg className="absolute inset-0 h-full w-full" viewBox={`0 0 ${width} ${height + 40}`}>
           {edges.map(([from, to]) => {
             const [x1, y1] = POS[from];
             const [x2, y2] = POS[to];
-            const ax = 100 + (x1 / COLS) * 800;
-            const bx = 100 + (x2 / COLS) * 800;
-            const ay = 20 + y1 * ROW_H + ROW_H / 2 + 30;
-            const by = 20 + y2 * ROW_H + ROW_H / 2 - 30;
+            const ax = xOf(x1);
+            const bx = xOf(x2);
+            const ay = yOf(y1) + NODE_H / 2;
+            const by = yOf(y2) - NODE_H / 2;
             const done = byCat(from).length > 0 && byCat(from).every((p) => progress[p.slug]?.solved);
             return (
               <path
@@ -65,7 +78,6 @@ export function RoadmapTree({ problems, progress }: { problems: ProblemMeta[]; p
                 fill="none"
                 stroke={done ? "var(--ctp-green)" : "var(--ctp-surface2)"}
                 strokeWidth={1.5}
-                vectorEffect="non-scaling-stroke"
                 strokeDasharray={done ? undefined : "4 4"}
               />
             );
@@ -81,13 +93,13 @@ export function RoadmapTree({ problems, progress }: { problems: ProblemMeta[]; p
               key={c.id}
               onClick={() => setOpen(c.id)}
               className={cn(
-                "absolute flex h-[60px] w-[176px] flex-col justify-center -translate-x-1/2 -translate-y-1/2 rounded-lg border bg-card px-3 py-2.5 text-left shadow-sm transition-all hover:-translate-y-[calc(50%+2px)] hover:border-ctp-mauve/60 hover:shadow-ctp-mauve/10 hover:shadow-lg",
+                "absolute flex flex-col justify-center gap-2 rounded-lg border bg-card px-3.5 text-left shadow-sm transition-colors hover:border-ctp-mauve/60 hover:bg-ctp-surface0/40",
                 ratio === 1 && "border-ctp-green/50",
               )}
-              style={{ left: pct(x), top: 20 + y * ROW_H + ROW_H / 2 }}
+              style={{ left: xOf(x) - NODE_W / 2, top: yOf(y) - NODE_H / 2, width: NODE_W, height: NODE_H }}
             >
-              <div className="truncate text-sm font-semibold">{c.name}</div>
-              <div className="mt-2 flex items-center gap-2">
+              <div className="text-[13.5px] leading-5 font-semibold whitespace-nowrap">{c.name}</div>
+              <div className="flex items-center gap-2">
                 <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-ctp-surface0">
                   <div className="h-full rounded-full bg-gradient-to-r from-ctp-mauve to-ctp-green transition-all" style={{ width: `${ratio * 100}%` }} />
                 </div>

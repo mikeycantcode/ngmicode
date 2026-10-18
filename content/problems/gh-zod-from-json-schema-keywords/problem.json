@@ -1,0 +1,21 @@
+{
+  "slug": "gh-zod-from-json-schema-keywords",
+  "title": "Enforce dropped JSON Schema keywords",
+  "base": "gh-zod",
+  "track": "sprint",
+  "category": "data-api",
+  "difficulty": "hard",
+  "timeLimit": 60,
+  "summary": "fromJSONSchema silently ignores minProperties, maxProperties, uniqueItems and contains/minContains/maxContains. Enforce them against the raw input and keep the round trip lossless.",
+  "tags": [
+    "real-world",
+    "zod",
+    "json-schema",
+    "validation"
+  ],
+  "source": {
+    "pr": 6535,
+    "url": "https://github.com/colinhacks/zod/pull/6535",
+    "title": "fix(v4): enforce the six JSON Schema keywords fromJSONSchema silently dropped"
+  }
+}

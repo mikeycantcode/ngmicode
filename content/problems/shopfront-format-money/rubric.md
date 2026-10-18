@@ -2,7 +2,7 @@
 Integer arithmetic only: take `Math.abs(cents)`, split into `Math.floor(abs / 100)` and
 `abs % 100`, group the dollar string in threes (regex `\B(?=(\d{3})+(?!\d))` or a loop),
 `padStart(2, "0")` the cents, and prefix `-` only when `cents < 0`. Guard with
-`Number.isInteger` first. A strong candidate states all of this up front to the literal agent,
+`Number.isInteger` first. A strong candidate states all of this up front to the agent,
 including the error message text and the `-0` case, then checks the agent's output against the table.
 
 ## Key files
@@ -15,7 +15,7 @@ including the error message text and the `-0` case, then checks the agent's outp
 - Using `toFixed` on `cents / 100` (float path) or `toLocaleString` (locale-dependent; explicitly banned).
 - Forgetting to pad cents (`$0.5`), or grouping the cents digits.
 - Not throwing for `NaN`/`Infinity` (`Number.isInteger` handles both), or throwing `TypeError`/`Error` instead of `RangeError`, or a different message.
-- Literal agent "helpfully" left alone will not touch other functions — but if the candidate says "clean up money.ts" it will.
+- Scope: a tight spec leaves other functions alone — but if the candidate says "clean up money.ts" the agent will touch them.
 
 ## Strong signals
 - Gives the agent the full table plus the exact error class and message in one instruction.

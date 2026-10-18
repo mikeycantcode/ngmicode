@@ -1,0 +1,21 @@
+{
+  "slug": "gh-remeda-deep-equal-null-proto",
+  "title": "isDeepEqual and null-prototype objects",
+  "base": "gh-remeda",
+  "track": "precision",
+  "category": "fundamentals",
+  "difficulty": "easy",
+  "timeLimit": 20,
+  "summary": "isDeepEqual says Object.create(null) objects never equal plain objects; specify the one prototype exception exactly.",
+  "tags": [
+    "real-world",
+    "remeda",
+    "equality",
+    "prototypes"
+  ],
+  "source": {
+    "pr": 1313,
+    "url": "https://github.com/remeda/remeda/pull/1313",
+    "title": "fix(isDeepEqual): allow null-prototype objects"
+  }
+}

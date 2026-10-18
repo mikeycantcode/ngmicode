@@ -1,0 +1,17 @@
+{
+  "slug": "gh-hono-method-not-allowed",
+  "title": "405 Method Not Allowed middleware",
+  "base": "gh-hono",
+  "track": "sprint",
+  "category": "features",
+  "difficulty": "hard",
+  "timeLimit": 60,
+  "summary": "Ship an opt-in middleware that turns a 404 into a 405 with a correct Allow header when the path exists under another method.",
+  "tags": ["real-world", "routing", "middleware", "http-semantics"],
+  "remove": ["src/middleware/method-not-allowed/index.ts", "src/middleware/method-not-allowed/index.test.ts"],
+  "source": {
+    "pr": 5132,
+    "url": "https://github.com/honojs/hono/pull/5132",
+    "title": "feat(middleware): add method-not-allowed middleware"
+  }
+}

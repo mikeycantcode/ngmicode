@@ -1,0 +1,12 @@
+{
+  "slug": "gh-immer-predicate-thisarg",
+  "title": "thisArg in filter/find/findLast",
+  "base": "gh-immer",
+  "track": "precision",
+  "category": "delegation",
+  "difficulty": "easy",
+  "timeLimit": 20,
+  "summary": "The array-methods plugin's hand-rolled filter, find and findLast drop the optional thisArg. Specify the exact fix precisely.",
+  "tags": ["real-world", "immer", "ecmascript-spec", "arrays"],
+  "source": { "pr": 1292, "url": "https://github.com/immerjs/immer/pull/1292", "title": "fix: forward thisArg in the array-methods plugin" }
+}

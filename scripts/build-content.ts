@@ -20,7 +20,7 @@ for (const slug of listProblemSlugs()) {
   bundles.push(b);
 }
 
-const sorted = sortBundles(bundles);
+const sorted = sortBundles(bundles.filter((b) => !b.slug.startsWith("_")));
 sorted.forEach((b, i) => (b.order = i + 1));
 for (const b of sorted) fs.writeFileSync(path.join(out, "problems", `${b.slug}.json`), JSON.stringify(b));
 

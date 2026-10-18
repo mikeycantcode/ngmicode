@@ -13,7 +13,7 @@ deleted, must have `parentId === null`, and must match `channelId`). Build the l
 
 ## Traps
 - **Order of checks.** Access must come before the limit check, and the limit check before the anchor check. Otherwise an outsider can probe private message ids by error message.
-- **Reusing `parseLimit`** gives the wrong bound (200) and the wrong message. A literal agent will do this if told to "validate like history()".
+- **Reusing `parseLimit`** gives the wrong bound (200) and the wrong message. A vague spec ("validate like history()") invites this.
 - **Anchor validity**: a thread reply id, a message from another channel, and a deleted message all have to produce the same `NotFoundError`. `access.message()` covers only the deleted case.
 - **Odd slot to the newer side**, plus redistribution in both directions.
 - **Oldest-first output.** An agent told to mirror `history()` will return newest-first.

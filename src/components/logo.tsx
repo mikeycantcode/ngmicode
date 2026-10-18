@@ -22,7 +22,7 @@ export function Logo({ className }: { className?: string }) {
     <Link href="/" className={cn("flex items-center gap-2 font-semibold tracking-tight", className)}>
       <LogoMark />
       <span>
-        Steer<span className="text-ctp-mauve">Code</span>
+        ngmi<span className="text-ctp-mauve">code</span>
       </span>
     </Link>
   );

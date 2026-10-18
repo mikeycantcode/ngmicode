@@ -6,6 +6,6 @@
   "category": "specs",
   "difficulty": "medium",
   "timeLimit": 30,
-  "summary": "Specify an exact plain-text preview renderer (tokens, markdown, escaping, word-boundary truncation) to a literal agent.",
+  "summary": "Specify an exact plain-text preview renderer (tokens, markdown, escaping, word-boundary truncation) precisely.",
   "tags": ["strings", "rendering", "truncation", "unicode"]
 }

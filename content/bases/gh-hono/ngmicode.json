@@ -1,0 +1,4 @@
+{
+  "source": { "repo": "honojs/hono", "commit": "5ca49b0720755c585c9a9835f0a479ceea36fb52", "license": "MIT", "url": "https://github.com/honojs/hono" },
+  "alias": { "hono": "src" }
+}

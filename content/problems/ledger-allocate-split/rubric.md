@@ -1,5 +1,5 @@
 ## Intended approach
-The candidate restates the algorithm unambiguously for a literal agent: validate the
+The candidate restates the algorithm unambiguously for the agent: validate the
 weights; take `abs` of the total; compute with BigInt `q_i = (A·w_i) / W` and
 `r_i = (A·w_i) % W`; leftover = A − Σq; sort indices by `r_i` desc, then index asc;
 add 1 to the first `leftover` indices; negate if the total was negative; build each

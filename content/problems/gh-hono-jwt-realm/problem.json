@@ -1,0 +1,16 @@
+{
+  "slug": "gh-hono-jwt-realm",
+  "title": "Configurable realm for JWT challenges",
+  "base": "gh-hono",
+  "track": "sprint",
+  "category": "data-api",
+  "difficulty": "medium",
+  "timeLimit": 45,
+  "summary": "Let the JWT auth middlewares set a stable WWW-Authenticate realm and stop malformed challenge headers.",
+  "tags": ["real-world", "auth", "http-headers", "api-design"],
+  "source": {
+    "pr": 5141,
+    "url": "https://github.com/honojs/hono/pull/5141",
+    "title": "feat(jwt,jwk): add a configurable WWW-Authenticate realm"
+  }
+}

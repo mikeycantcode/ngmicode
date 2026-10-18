@@ -3,7 +3,7 @@
 Reviewers can't read `buildgraph.lock` diffs: keys are requested specs (`react@^18.2.0`), so one
 upgrade touches several lines. We want `buildgraph install` to report a **package-level** diff.
 
-Your agent runs in **literal mode**. It does exactly what you say and nothing more. Delegate
+Your instructions to the agent are graded for precision. Delegate
 precisely.
 
 ## Part 1: `src/resolver/lockfile-diff.ts`

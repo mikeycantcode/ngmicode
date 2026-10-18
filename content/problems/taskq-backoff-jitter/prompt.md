@@ -8,8 +8,7 @@ the worker lifecycle. The worker calls it after try number `attempt`
 (1-based) fails, and passes the job's `backoff` option plus the TaskQ's seeded
 RNG (`() => number` in `[0, 1)`).
 
-Your agent is in **literal mode**: it does exactly what you tell it and infers
-nothing. Your score depends on how precisely you specify the behaviour.
+Your instructions to the agent are graded for precision. Your score depends on how precisely you specify the behaviour.
 
 ## The spec (from the retry design doc)
 

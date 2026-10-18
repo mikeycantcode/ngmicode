@@ -28,7 +28,7 @@ Turn the ticket into a precise spec. A strong spec includes the following.
   min, not only one.
 - **LIMIT semantics.** Negative count means all. Negative offset means empty. Offset applies to
   matches, not to absolute ranks. LIMIT with one argument is a syntax error.
-- **Bound errors.** A literal agent writing its own parser returns `ERR value is not a valid float`
+- **Bound errors.** A vague spec lets the agent write its own parser, which returns `ERR value is not a valid float`
   instead of ZCOUNT's message.
 - **Flags.** Copying ZADD's spec makes the command WAL-logged.
 - A full scan with `entries().filter(...)` passes the tests but fails the ticket's explicit

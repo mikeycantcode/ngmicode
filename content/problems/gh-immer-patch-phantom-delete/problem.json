@@ -1,0 +1,12 @@
+{
+  "slug": "gh-immer-patch-phantom-delete",
+  "title": "Phantom remove patches",
+  "base": "gh-immer",
+  "track": "weak",
+  "category": "debugging",
+  "difficulty": "medium",
+  "timeLimit": 45,
+  "summary": "Writing a property's own base value back over its draft emits a bogus remove patch, and replaying the patches deletes data.",
+  "tags": ["real-world", "immer", "patches", "proxies", "undo"],
+  "source": { "pr": 1295, "url": "https://github.com/immerjs/immer/pull/1295", "title": "fix: do not record a deletion when a base value is written back over its draft" }
+}

@@ -21,7 +21,7 @@ export interface ProblemSpec {
   source?: { pr: number; url: string; title: string };
 }
 
-/** content/bases/<id>/steercode.json for real-repo bases. */
+/** content/bases/<id>/ngmicode.json for real-repo bases. */
 export interface BaseManifest {
   source?: { repo: string; commit: string; license: string; url: string };
   alias?: Record<string, string>;

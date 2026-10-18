@@ -1,5 +1,5 @@
 ## Intended approach
-Candidate gives the literal agent two surgical edits, naming the file and function for each:
+Candidate gives the agent two surgical edits, naming the file and function for each:
 1. `HtmlRenderer.block`, `case "list"`: compute
    `start = node.ordered && node.start !== 1 ? String(node.start) : null` and render
    `<${tag}${this.attrs({ start })}>`. `attrs()` skips null values and escapes.
@@ -17,7 +17,7 @@ They tell the agent explicitly not to touch anything else, and they verify with 
   agent told "add start when present" emits it for every list.
 - **Second code path.** The plain-text renderer also numbers items. A candidate who only
   mentions HTML leaves emails wrong. Hidden test 3 catches this.
-- **Over-reach.** Literal mode does what it's told. Vague instructions like "fix list
+- **Over-reach.** Vague instructions like "fix list
   numbering everywhere" invite edits to the parser or TOC.
 - **Attribute formatting.** Hand-building ` start=${n}` without quotes, or with a stray
   space, breaks exact output. The `attrs()` helper avoids both.

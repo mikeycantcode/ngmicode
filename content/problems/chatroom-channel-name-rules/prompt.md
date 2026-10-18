@@ -5,8 +5,7 @@ Product wants channel names to follow the same rules as Slack. Today
 and turns whitespace into hyphens. Users have created channels named
 `!!!`, `__ops__`, and `here`. The last one breaks `#here` / `@here` handling.
 
-Your agent is in **literal mode**. It does exactly what you tell it and infers
-nothing. You're scored on how precisely you specify the change.
+Your instructions to the agent are graded for precision. You're scored on how precisely you specify the change.
 
 ## Required behavior
 

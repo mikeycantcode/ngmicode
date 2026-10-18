@@ -127,17 +127,17 @@ export function ProblemTable({
       </div>
 
       <div className="mt-4 overflow-hidden rounded-xl border">
-        <table className="w-full text-sm">
+        <table className="w-full table-fixed text-sm">
           <thead className="bg-ctp-mantle text-left text-xs text-muted-foreground">
             <tr>
-              <th className="w-10 px-4 py-2.5 font-medium">#</th>
+              <th className="w-14 px-4 py-2.5 font-medium">#</th>
               <th className="w-8 py-2.5" />
               <th className="py-2.5 font-medium">Problem</th>
-              <th className="hidden py-2.5 font-medium md:table-cell">Format</th>
-              <th className="hidden py-2.5 font-medium lg:table-cell">Topic</th>
-              <th className="hidden py-2.5 font-medium sm:table-cell">Codebase</th>
-              <th className="py-2.5 font-medium">Difficulty</th>
-              <th className="hidden py-2.5 pr-4 text-right font-medium sm:table-cell">Time</th>
+              <th className="hidden w-28 py-2.5 font-medium md:table-cell">Format</th>
+              <th className="hidden w-44 py-2.5 font-medium lg:table-cell">Topic</th>
+              <th className="hidden w-48 py-2.5 font-medium sm:table-cell">Codebase</th>
+              <th className="w-24 py-2.5 font-medium">Difficulty</th>
+              <th className="hidden w-20 py-2.5 pr-4 text-right font-medium sm:table-cell">Time</th>
             </tr>
           </thead>
           <tbody>
@@ -156,16 +156,16 @@ export function ProblemTable({
                     )}
                   </td>
                   <td className="py-3 pr-4">
-                    <Link href={`/problems/${p.slug}`} className="font-medium group-hover:text-ctp-mauve">
+                    <Link href={`/problems/${p.slug}`} className="block truncate font-medium group-hover:text-ctp-mauve">
                       {p.title}
                     </Link>
-                    <div className="line-clamp-1 text-xs text-muted-foreground">{p.summary}</div>
+                    <div className="truncate text-xs text-muted-foreground">{p.summary}</div>
                   </td>
                   <td className="hidden py-3 md:table-cell">
                     <TrackBadge track={p.track as TrackId} />
                   </td>
-                  <td className="hidden py-3 text-xs text-muted-foreground lg:table-cell">{CATEGORY_BY_ID[p.category]?.name}</td>
-                  <td className="hidden py-3 font-mono text-xs text-muted-foreground sm:table-cell">
+                  <td className="hidden truncate py-3 pr-3 text-xs text-muted-foreground lg:table-cell">{CATEGORY_BY_ID[p.category]?.name}</td>
+                  <td className="hidden truncate py-3 pr-3 font-mono text-xs text-muted-foreground sm:table-cell">
                     {p.repo ? (
                       <span className="inline-flex items-center gap-1 text-ctp-sapphire">
                         <GitPullRequest className="size-3" />
@@ -179,7 +179,7 @@ export function ProblemTable({
                     <DifficultyLabel difficulty={p.difficulty} />
                     {pr?.best != null && <div className="text-[11px] text-muted-foreground tabular-nums">best {pr.best}</div>}
                   </td>
-                  <td className="hidden py-3 pr-4 text-right text-xs text-muted-foreground tabular-nums sm:table-cell">
+                  <td className="hidden py-3 pr-4 text-right text-xs whitespace-nowrap text-muted-foreground tabular-nums sm:table-cell">
                     <Timer className="mr-1 inline size-3" />
                     {p.timeLimit}m
                   </td>

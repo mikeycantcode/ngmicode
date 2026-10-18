@@ -1,0 +1,39 @@
+{
+  "slug": "gh-valibot-case-transforms",
+  "title": "Naming-convention transforms: toCamelCase & friends",
+  "base": "gh-valibot",
+  "track": "sprint",
+  "category": "features",
+  "difficulty": "hard",
+  "timeLimit": 60,
+  "summary": "Add toCamelCase, toPascalCase, toSnakeCase and toKebabCase transformation actions to valibot, sharing one word splitter that handles acronyms, digits and Unicode.",
+  "tags": [
+    "real-world",
+    "transformation",
+    "strings",
+    "unicode",
+    "api-design"
+  ],
+  "remove": [
+    "src/actions/toCamelCase/index.ts",
+    "src/actions/toCamelCase/toCamelCase.test.ts",
+    "src/actions/toCamelCase/toCamelCase.ts",
+    "src/actions/toKebabCase/index.ts",
+    "src/actions/toKebabCase/toKebabCase.test.ts",
+    "src/actions/toKebabCase/toKebabCase.ts",
+    "src/actions/toPascalCase/index.ts",
+    "src/actions/toPascalCase/toPascalCase.test.ts",
+    "src/actions/toPascalCase/toPascalCase.ts",
+    "src/actions/toSnakeCase/index.ts",
+    "src/actions/toSnakeCase/toSnakeCase.test.ts",
+    "src/actions/toSnakeCase/toSnakeCase.ts",
+    "src/utils/_formatCase/_formatCase.test.ts",
+    "src/utils/_formatCase/_formatCase.ts",
+    "src/utils/_formatCase/index.ts"
+  ],
+  "source": {
+    "pr": 1457,
+    "url": "https://github.com/open-circle/valibot/pull/1457",
+    "title": "feat: add built-in string case transformation actions (`toCamelCase`, `toSnakeCase`, `toKebabCase`, `toPascalCase`)"
+  }
+}

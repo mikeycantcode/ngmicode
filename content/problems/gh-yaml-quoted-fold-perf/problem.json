@@ -1,0 +1,21 @@
+{
+  "slug": "gh-yaml-quoted-fold-perf",
+  "title": "Quadratic quoted-scalar folding",
+  "base": "gh-yaml",
+  "track": "review",
+  "category": "performance",
+  "difficulty": "hard",
+  "timeLimit": 45,
+  "summary": "A double-quoted string with a long run of spaces takes seconds to parse. Find the hot path and make line folding linear without changing its output.",
+  "tags": [
+    "real-world",
+    "yaml",
+    "regex",
+    "redos"
+  ],
+  "source": {
+    "pr": 699,
+    "url": "https://github.com/eemeli/yaml/pull/699",
+    "title": "perf: various performance tweaks"
+  }
+}
