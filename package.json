@@ -7,7 +7,7 @@
     "build": "tsx scripts/build-content.ts && next build",
     "start": "next start -p ${PORT:-3000}",
     "lint": "eslint",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "next typegen && tsc --noEmit",
     "content:build": "tsx scripts/build-content.ts",
     "content:verify": "tsx scripts/verify-content.ts",
     "content:test-base": "tsx scripts/test-base.ts"
